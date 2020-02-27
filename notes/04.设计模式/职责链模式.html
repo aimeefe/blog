@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>职责链模式 | ❤️❤️❤️</title>
+    <meta name="description" content="前端，开发，进阶，笔记">
+    <meta name="generator" content="VuePress 1.3.0">
+    
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.ac634132.css" as="style"><link rel="preload" href="/blog/assets/js/app.80d78e54.js" as="script"><link rel="preload" href="/blog/assets/js/2.6c5a5ebc.js" as="script"><link rel="preload" href="/blog/assets/js/31.70c4296c.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.8da95c9f.js"><link rel="prefetch" href="/blog/assets/js/11.c593a547.js"><link rel="prefetch" href="/blog/assets/js/12.f1c08ffe.js"><link rel="prefetch" href="/blog/assets/js/13.767832f8.js"><link rel="prefetch" href="/blog/assets/js/14.2a2b4737.js"><link rel="prefetch" href="/blog/assets/js/15.51d396b0.js"><link rel="prefetch" href="/blog/assets/js/16.32a1ca02.js"><link rel="prefetch" href="/blog/assets/js/17.b55e63c6.js"><link rel="prefetch" href="/blog/assets/js/18.b9d4e361.js"><link rel="prefetch" href="/blog/assets/js/19.7281e615.js"><link rel="prefetch" href="/blog/assets/js/20.91621a19.js"><link rel="prefetch" href="/blog/assets/js/21.e2b8ea91.js"><link rel="prefetch" href="/blog/assets/js/22.6caedcc0.js"><link rel="prefetch" href="/blog/assets/js/23.b514fea6.js"><link rel="prefetch" href="/blog/assets/js/24.4f2afd9d.js"><link rel="prefetch" href="/blog/assets/js/25.99f5d4ec.js"><link rel="prefetch" href="/blog/assets/js/26.ca72e1f6.js"><link rel="prefetch" href="/blog/assets/js/27.c2c83ead.js"><link rel="prefetch" href="/blog/assets/js/28.035bde5e.js"><link rel="prefetch" href="/blog/assets/js/29.c9fb3c04.js"><link rel="prefetch" href="/blog/assets/js/3.315dffdd.js"><link rel="prefetch" href="/blog/assets/js/30.09593c06.js"><link rel="prefetch" href="/blog/assets/js/32.0abbc4ea.js"><link rel="prefetch" href="/blog/assets/js/33.31a4f07e.js"><link rel="prefetch" href="/blog/assets/js/34.132654a5.js"><link rel="prefetch" href="/blog/assets/js/35.a77003b9.js"><link rel="prefetch" href="/blog/assets/js/36.c8c0dc61.js"><link rel="prefetch" href="/blog/assets/js/37.bc748c14.js"><link rel="prefetch" href="/blog/assets/js/38.ed34adeb.js"><link rel="prefetch" href="/blog/assets/js/39.b30739ec.js"><link rel="prefetch" href="/blog/assets/js/4.03ca44f5.js"><link rel="prefetch" href="/blog/assets/js/40.5d8d1919.js"><link rel="prefetch" href="/blog/assets/js/41.d2f80426.js"><link rel="prefetch" href="/blog/assets/js/42.34bdf90e.js"><link rel="prefetch" href="/blog/assets/js/5.83154436.js"><link rel="prefetch" href="/blog/assets/js/6.0b9eae7f.js"><link rel="prefetch" href="/blog/assets/js/7.cb853795.js"><link rel="prefetch" href="/blog/assets/js/8.1e9d1614.js"><link rel="prefetch" href="/blog/assets/js/9.46c1a5cb.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.ac634132.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">❤️❤️❤️</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="00.前端" class="dropdown-title"><span class="title">00.前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/00.HTML5/00.基础.html" class="nav-link">
+  00.HTML5
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/01.JavaScript/00.ES6-函数.html" class="nav-link">
+  01.JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/03.HTTP/00.tcpip协议族.html" class="nav-link">
+  03.HTTP
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/04.浏览器与安全/00.浏览器的渲染原理详解.html" class="nav-link">
+  04.浏览器与安全
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="01.框架" class="dropdown-title"><span class="title">01.框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/01.框架/00.Vue/00.Vue核心原理解析.html" class="nav-link">
+  00.Vue
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/notes/02.原理探究/00.call、apply、bind.html" class="nav-link">
+  02.原理探究
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="03.自动化与部署" class="dropdown-title"><span class="title">03.自动化与部署</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/03.自动化与部署/webpack/webpack4.html" class="nav-link">
+  webpack
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/notes/04.设计模式/中介者模式.html" class="nav-link">
+  04.设计模式
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="05.数据结构与算法" class="dropdown-title"><span class="title">05.数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/05.数据结构与算法/00.数据结构/00.栈.html" class="nav-link">
+  00.数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/05.数据结构与算法/01.算法修炼/00.冒泡排序.html" class="nav-link">
+  01.算法修炼
+</a></li></ul></div></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="00.前端" class="dropdown-title"><span class="title">00.前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/00.HTML5/00.基础.html" class="nav-link">
+  00.HTML5
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/01.JavaScript/00.ES6-函数.html" class="nav-link">
+  01.JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/03.HTTP/00.tcpip协议族.html" class="nav-link">
+  03.HTTP
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/04.浏览器与安全/00.浏览器的渲染原理详解.html" class="nav-link">
+  04.浏览器与安全
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="01.框架" class="dropdown-title"><span class="title">01.框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/01.框架/00.Vue/00.Vue核心原理解析.html" class="nav-link">
+  00.Vue
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/notes/02.原理探究/00.call、apply、bind.html" class="nav-link">
+  02.原理探究
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="03.自动化与部署" class="dropdown-title"><span class="title">03.自动化与部署</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/03.自动化与部署/webpack/webpack4.html" class="nav-link">
+  webpack
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/notes/04.设计模式/中介者模式.html" class="nav-link">
+  04.设计模式
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="05.数据结构与算法" class="dropdown-title"><span class="title">05.数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/05.数据结构与算法/00.数据结构/00.栈.html" class="nav-link">
+  00.数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/05.数据结构与算法/01.算法修炼/00.冒泡排序.html" class="nav-link">
+  01.算法修炼
+</a></li></ul></div></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/notes/04.设计模式/中介者模式.html" class="sidebar-link">中介者模式</a></li><li><a href="/blog/notes/04.设计模式/代理模式.html" class="sidebar-link">代理模式</a></li><li><a href="/blog/notes/04.设计模式/单例模式.html" class="sidebar-link">单例模式</a></li><li><a href="/blog/notes/04.设计模式/发布订阅模式.html" class="sidebar-link">发布-订阅模式</a></li><li><a href="/blog/notes/04.设计模式/命令模式.html" class="sidebar-link">命令模式</a></li><li><a href="/blog/notes/04.设计模式/模板方法模式.html" class="sidebar-link">模板方法模式</a></li><li><a href="/blog/notes/04.设计模式/策略模式.html" class="sidebar-link">策略模式</a></li><li><a href="/blog/notes/04.设计模式/职责链模式.html" class="active sidebar-link">职责链模式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/notes/04.设计模式/职责链模式.html#生活场景" class="sidebar-link">生活场景</a></li><li class="sidebar-sub-header"><a href="/blog/notes/04.设计模式/职责链模式.html#优点" class="sidebar-link">优点</a></li><li class="sidebar-sub-header"><a href="/blog/notes/04.设计模式/职责链模式.html#缺点" class="sidebar-link">缺点</a></li><li class="sidebar-sub-header"><a href="/blog/notes/04.设计模式/职责链模式.html#使用" class="sidebar-link">使用</a></li><li class="sidebar-sub-header"><a href="/blog/notes/04.设计模式/职责链模式.html#总结" class="sidebar-link">总结</a></li></ul></li><li><a href="/blog/notes/04.设计模式/装饰者模式.html" class="sidebar-link">装饰者模式</a></li><li><a href="/blog/notes/04.设计模式/适配器模式.html" class="sidebar-link">适配器模式</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="职责链模式"><a href="#职责链模式" class="header-anchor">#</a> 职责链模式</h1> <p>一系列可能会处理请求的对象被连成一条链，请求在这些对象（节点）之间依次传递，直到遇到一个可以处理它的对象。</p> <h2 id="生活场景"><a href="#生活场景" class="header-anchor">#</a> 生活场景</h2> <p>期末考试，有个不老实的学生，考试被安排在第一排。遇到不回答的题目，就把题目编号写在小纸条上往后传递，坐在后面的同学如果也不会答，它就会把这个小纸条继续传给他后面的人</p> <h2 id="优点"><a href="#优点" class="header-anchor">#</a> 优点</h2> <p>请求发送者只需知道链中的第一个节点，从而弱化了发送者和一组接收者之间的强联系。</p> <h2 id="缺点"><a href="#缺点" class="header-anchor">#</a> 缺点</h2> <p>职责链使程序中多了一些节点对象，可能在某次传递中，大部分节点除了让请求传递下去之外并没有起到实质性的作用，从性能上考虑，要避免过长的职责链带来的性能损耗。</p> <h2 id="使用"><a href="#使用" class="header-anchor">#</a> 使用</h2> <h6 id="demo：一个售卖手机的电商网站，经过分别缴纳500元定金和200元定金的两轮预定后，现在已经到了正式购买阶段。在正式购买后额规则如下："><a href="#demo：一个售卖手机的电商网站，经过分别缴纳500元定金和200元定金的两轮预定后，现在已经到了正式购买阶段。在正式购买后额规则如下：" class="header-anchor">#</a> demo：一个售卖手机的电商网站，经过分别缴纳500元定金和200元定金的两轮预定后，现在已经到了正式购买阶段。在正式购买后额规则如下：</h6> <h6 id="_1-已经支付过500元定金的用户会受到100元的优惠券，"><a href="#_1-已经支付过500元定金的用户会受到100元的优惠券，" class="header-anchor">#</a> 1. 已经支付过500元定金的用户会受到100元的优惠券，</h6> <h6 id="_2-200元的用户可以受到50元优惠券，"><a href="#_2-200元的用户可以受到50元优惠券，" class="header-anchor">#</a> 2. 200元的用户可以受到50元优惠券，</h6> <h6 id="_3-没有支付定金的没有优惠券，而且库存有限不一定保证能买到。"><a href="#_3-没有支付定金的没有优惠券，而且库存有限不一定保证能买到。" class="header-anchor">#</a> 3. 没有支付定金的没有优惠券，而且库存有限不一定保证能买到。</h6> <h3 id="初始代码："><a href="#初始代码：" class="header-anchor">#</a> 初始代码：</h3> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> <span class="token function-variable function">order</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">orderType<span class="token punctuation">,</span> pay<span class="token punctuation">,</span> stock</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">//500 元定金购买模式</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>orderType <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 如果支付过500定金，获得优惠券，否则将为普通购买</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>pay<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'500元定金预约，得到100优惠券'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>stock <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'普通购买，无优惠券'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'手机库存不足'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 200元定金购买模式</span>
+  <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>orderType <span class="token operator">===</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>pay<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'200元定金预约，得到50元优惠券'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>stock <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'普通购买，无优惠券'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'手机库存不足'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 普通购买</span>
+  <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>orderType <span class="token operator">===</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>stock <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'普通购买，无优惠券'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'手机库存不足'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 测试结果</span>
+<span class="token function">order</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//500元定金预约，得到100优惠券</span>
+</code></pre></div><blockquote><p>分析：</p> <p>上面这段代码虽然得到了正确结果，但是 order 函数非常臃肿难以维护</p></blockquote> <h3 id="初级职责链重构"><a href="#初级职责链重构" class="header-anchor">#</a> 初级职责链重构</h3> <p>思路：把500元订单、200元订单、普通订单这三种购买模式分成 3 个节点函数，如果当前节点函数不符合规则就传递给下一个节点函数。</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token comment">// 500元定金订单</span>
+<span class="token keyword">const</span> <span class="token function-variable function">order500</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">orderType<span class="token punctuation">,</span> pay<span class="token punctuation">,</span> stock</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>orderType <span class="token operator">===</span> <span class="token number">1</span> <span class="token operator">&amp;&amp;</span> pay<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'500元定金预约，得到100元优惠券'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">//将请求传递给200元订单</span>
+    <span class="token function">order200</span><span class="token punctuation">(</span>orderType<span class="token punctuation">,</span> pay<span class="token punctuation">,</span> stock<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 200元定金订单</span>
+<span class="token keyword">const</span> <span class="token function-variable function">order200</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">orderType<span class="token punctuation">,</span> pay<span class="token punctuation">,</span> stock</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>orderType <span class="token operator">===</span> <span class="token number">2</span> <span class="token operator">&amp;&amp;</span> pay<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'200元定金预约，得到50元优惠券'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">//将请求传递给普通订单</span>
+    <span class="token function">orderNormal</span><span class="token punctuation">(</span>orderType<span class="token punctuation">,</span> pay<span class="token punctuation">,</span> stock<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 普通订单</span>
+<span class="token keyword">const</span> <span class="token function-variable function">orderNormal</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">orderType<span class="token punctuation">,</span> pay<span class="token punctuation">,</span> stock</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>stock <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'普通购买，无优惠券'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'手机库存不足'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 测试结果</span>
+<span class="token function">order500</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//500元定金预约，得到100元优惠券</span>
+<span class="token function">order500</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//普通购买，无优惠券</span>
+<span class="token function">order500</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//200元定金预约，得到50元优惠券</span>
+<span class="token function">order500</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//手机库存不足</span>
+</code></pre></div><blockquote><p>分析：</p> <p>职责链重构的代码看起来结构清晰了很多，把一个大函数拆成了3个小函数，去掉了很多嵌套的条件分支语句。</p> <p>但是这种写法比较僵硬，传递请求的代码被耦合在了业务函数中，如果某天需要删除或增加某个节点就得先砸烂这跟链条重新组装</p></blockquote> <h3 id="灵活可拆分的职责链重构"><a href="#灵活可拆分的职责链重构" class="header-anchor">#</a> 灵活可拆分的职责链重构</h3> <p>目标：让链中的各个节点可以灵活拆分和重组。</p> <p>思路：</p> <ol><li>定义节点函数，如果某个节点不能处理请求，就返回一个特定字符串'nextSuccessor'来标识该请求需要继续往后面传递</li> <li>定义构造函数 chain，包含指定链中下一个节点、传给请求给节点</li> <li>把3个节点函数分别包装成职责链节点并指定节点在职责链中的顺序</li></ol> <h6 id="定义节点函数，如果某个节点不能处理请求，就返回一个特定字符串-nextsuccessor-来标识该请求需要继续往后面传递"><a href="#定义节点函数，如果某个节点不能处理请求，就返回一个特定字符串-nextsuccessor-来标识该请求需要继续往后面传递" class="header-anchor">#</a> 定义节点函数，如果某个节点不能处理请求，就返回一个特定字符串'nextSuccessor'来标识该请求需要继续往后面传递</h6> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code>
+  <span class="token comment">// 500元定金订单</span>
+<span class="token keyword">const</span> <span class="token function-variable function">order500</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">orderType<span class="token punctuation">,</span> pay<span class="token punctuation">,</span> stock</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>orderType <span class="token operator">===</span> <span class="token number">1</span> <span class="token operator">&amp;&amp;</span> pay<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'500元定金预约，得到100元优惠券'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">//不知道下一个节点是谁，反正把请求往后传递</span>
+    <span class="token keyword">return</span> <span class="token string">'nextSuccessor'</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 200元定金订单</span>
+<span class="token keyword">const</span> <span class="token function-variable function">order200</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">orderType<span class="token punctuation">,</span> pay<span class="token punctuation">,</span> stock</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>orderType <span class="token operator">===</span> <span class="token number">2</span> <span class="token operator">&amp;&amp;</span> pay<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'200元定金预约，得到50元优惠券'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">//不知道下一个节点是谁，反正把请求往后传递</span>
+    <span class="token keyword">return</span> <span class="token string">'nextSuccessor'</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 普通订单</span>
+<span class="token keyword">const</span> <span class="token function-variable function">orderNormal</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">orderType<span class="token punctuation">,</span> pay<span class="token punctuation">,</span> stock</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>stock <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'普通购买，无优惠券'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'手机库存不足'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h6 id="定义职责链构造函数-chain，包含指定链中下一个节点、传给请求给节点"><a href="#定义职责链构造函数-chain，包含指定链中下一个节点、传给请求给节点" class="header-anchor">#</a> 定义职责链构造函数 chain，包含指定链中下一个节点、传给请求给节点</h6> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code>
+<span class="token keyword">class</span> <span class="token class-name">Chain</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>fn <span class="token operator">=</span> fn<span class="token punctuation">;</span> <span class="token comment">//需要被包装的函数</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>successor <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> <span class="token comment">//链中的下一个节点</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 指定链中的下一个节点</span>
+  <span class="token function">setNextSuccessor</span><span class="token punctuation">(</span><span class="token parameter">successor</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>successor <span class="token operator">=</span> successor<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 传递请求给某个节点</span>
+  <span class="token function">passRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 符合规则的情况处理</span>
+    <span class="token keyword">const</span> ret <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> arguments<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    
+    <span class="token comment">// 不符合规则的情况处理</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>ret <span class="token operator">===</span> <span class="token string">'nextSuccessor'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>successor <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>successor<span class="token punctuation">.</span><span class="token function">passRequest</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>successor<span class="token punctuation">,</span> arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> ret<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h6 id="把3个节点函数分别包装成职责链节点并指定节点在职责链中的顺序"><a href="#把3个节点函数分别包装成职责链节点并指定节点在职责链中的顺序" class="header-anchor">#</a> 把3个节点函数分别包装成职责链节点并指定节点在职责链中的顺序</h6> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token comment">// 将函数包装进责任链节点</span>
+<span class="token keyword">const</span> chainOrder500 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Chain</span><span class="token punctuation">(</span>order500<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> chainOrder200 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Chain</span><span class="token punctuation">(</span>order200<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> chainOrderNormal <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Chain</span><span class="token punctuation">(</span>orderNormal<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 指定节点在职责链中的顺序</span>
+chainOrder500
+  <span class="token punctuation">.</span><span class="token function">setNextSuccessor</span><span class="token punctuation">(</span>chainOrder200<span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">setNextSuccessor</span><span class="token punctuation">(</span>chainOrderNormal<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ 
+</code></pre></div><h6 id="测试结果"><a href="#测试结果" class="header-anchor">#</a> 测试结果</h6> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code>chainOrder500<span class="token punctuation">.</span><span class="token function">passRequest</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//500元定金预约，得到100元优惠券</span>
+chainOrder500<span class="token punctuation">.</span><span class="token function">passRequest</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//普通购买，无优惠券</span>
+chainOrder500<span class="token punctuation">.</span><span class="token function">passRequest</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//200元定金预约，得到50元优惠券</span>
+chainOrder500<span class="token punctuation">.</span><span class="token function">passRequest</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//手机库存不足</span>
+</code></pre></div><h3 id="用-apo-重构职责链"><a href="#用-apo-重构职责链" class="header-anchor">#</a> 用 APO 重构职责链</h3> <p>利用JavaScript函数式特性，有更方便的方法来创建职责链，基于上例中的三个节点函数，来改下下这个demo。</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token comment">// 利用JavaScript函数式特性，来创建职责链</span>
+<span class="token class-name">Function</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">after</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> self <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> ret <span class="token operator">=</span> <span class="token function">self</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>ret <span class="token operator">===</span> <span class="token string">'nextSuccessor'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> ret<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> order <span class="token operator">=</span> order500<span class="token punctuation">.</span><span class="token function">after</span><span class="token punctuation">(</span>order200<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">after</span><span class="token punctuation">(</span>orderNormal<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 测试</span>
+<span class="token function">order</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//500元定金预约，得到100元优惠券</span>
+<span class="token function">order</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//普通购买，无优惠券</span>
+<span class="token function">order</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//200元定金预约，得到50元优惠券</span>
+<span class="token function">order</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//手机库存不足</span>
+</code></pre></div><h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>职责链可以很好的帮我们管理飞马，降低发送请求的对象和处理请求的对象之间的耦合性。职责链中的节点数量和顺序是可以自由变化的，我们可以在运行时决定链子中包含哪些节点。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/notes/04.设计模式/策略模式.html" class="prev">
+        策略模式
+      </a></span> <span class="next"><a href="/blog/notes/04.设计模式/装饰者模式.html">
+        装饰者模式
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.80d78e54.js" defer></script><script src="/blog/assets/js/2.6c5a5ebc.js" defer></script><script src="/blog/assets/js/31.70c4296c.js" defer></script>
+  </body>
+</html>

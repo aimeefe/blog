@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>命令模式 | ❤️❤️❤️</title>
+    <meta name="description" content="前端，开发，进阶，笔记">
+    <meta name="generator" content="VuePress 1.3.0">
+    
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.ac634132.css" as="style"><link rel="preload" href="/blog/assets/js/app.80d78e54.js" as="script"><link rel="preload" href="/blog/assets/js/2.6c5a5ebc.js" as="script"><link rel="preload" href="/blog/assets/js/28.035bde5e.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.8da95c9f.js"><link rel="prefetch" href="/blog/assets/js/11.c593a547.js"><link rel="prefetch" href="/blog/assets/js/12.f1c08ffe.js"><link rel="prefetch" href="/blog/assets/js/13.767832f8.js"><link rel="prefetch" href="/blog/assets/js/14.2a2b4737.js"><link rel="prefetch" href="/blog/assets/js/15.51d396b0.js"><link rel="prefetch" href="/blog/assets/js/16.32a1ca02.js"><link rel="prefetch" href="/blog/assets/js/17.b55e63c6.js"><link rel="prefetch" href="/blog/assets/js/18.b9d4e361.js"><link rel="prefetch" href="/blog/assets/js/19.7281e615.js"><link rel="prefetch" href="/blog/assets/js/20.91621a19.js"><link rel="prefetch" href="/blog/assets/js/21.e2b8ea91.js"><link rel="prefetch" href="/blog/assets/js/22.6caedcc0.js"><link rel="prefetch" href="/blog/assets/js/23.b514fea6.js"><link rel="prefetch" href="/blog/assets/js/24.4f2afd9d.js"><link rel="prefetch" href="/blog/assets/js/25.99f5d4ec.js"><link rel="prefetch" href="/blog/assets/js/26.ca72e1f6.js"><link rel="prefetch" href="/blog/assets/js/27.c2c83ead.js"><link rel="prefetch" href="/blog/assets/js/29.c9fb3c04.js"><link rel="prefetch" href="/blog/assets/js/3.315dffdd.js"><link rel="prefetch" href="/blog/assets/js/30.09593c06.js"><link rel="prefetch" href="/blog/assets/js/31.70c4296c.js"><link rel="prefetch" href="/blog/assets/js/32.0abbc4ea.js"><link rel="prefetch" href="/blog/assets/js/33.31a4f07e.js"><link rel="prefetch" href="/blog/assets/js/34.132654a5.js"><link rel="prefetch" href="/blog/assets/js/35.a77003b9.js"><link rel="prefetch" href="/blog/assets/js/36.c8c0dc61.js"><link rel="prefetch" href="/blog/assets/js/37.bc748c14.js"><link rel="prefetch" href="/blog/assets/js/38.ed34adeb.js"><link rel="prefetch" href="/blog/assets/js/39.b30739ec.js"><link rel="prefetch" href="/blog/assets/js/4.03ca44f5.js"><link rel="prefetch" href="/blog/assets/js/40.5d8d1919.js"><link rel="prefetch" href="/blog/assets/js/41.d2f80426.js"><link rel="prefetch" href="/blog/assets/js/42.34bdf90e.js"><link rel="prefetch" href="/blog/assets/js/5.83154436.js"><link rel="prefetch" href="/blog/assets/js/6.0b9eae7f.js"><link rel="prefetch" href="/blog/assets/js/7.cb853795.js"><link rel="prefetch" href="/blog/assets/js/8.1e9d1614.js"><link rel="prefetch" href="/blog/assets/js/9.46c1a5cb.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.ac634132.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">❤️❤️❤️</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="00.前端" class="dropdown-title"><span class="title">00.前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/00.HTML5/00.基础.html" class="nav-link">
+  00.HTML5
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/01.JavaScript/00.ES6-函数.html" class="nav-link">
+  01.JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/03.HTTP/00.tcpip协议族.html" class="nav-link">
+  03.HTTP
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/04.浏览器与安全/00.浏览器的渲染原理详解.html" class="nav-link">
+  04.浏览器与安全
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="01.框架" class="dropdown-title"><span class="title">01.框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/01.框架/00.Vue/00.Vue核心原理解析.html" class="nav-link">
+  00.Vue
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/notes/02.原理探究/00.call、apply、bind.html" class="nav-link">
+  02.原理探究
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="03.自动化与部署" class="dropdown-title"><span class="title">03.自动化与部署</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/03.自动化与部署/webpack/webpack4.html" class="nav-link">
+  webpack
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/notes/04.设计模式/中介者模式.html" class="nav-link">
+  04.设计模式
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="05.数据结构与算法" class="dropdown-title"><span class="title">05.数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/05.数据结构与算法/00.数据结构/00.栈.html" class="nav-link">
+  00.数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/05.数据结构与算法/01.算法修炼/00.冒泡排序.html" class="nav-link">
+  01.算法修炼
+</a></li></ul></div></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="00.前端" class="dropdown-title"><span class="title">00.前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/00.HTML5/00.基础.html" class="nav-link">
+  00.HTML5
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/01.JavaScript/00.ES6-函数.html" class="nav-link">
+  01.JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/03.HTTP/00.tcpip协议族.html" class="nav-link">
+  03.HTTP
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/04.浏览器与安全/00.浏览器的渲染原理详解.html" class="nav-link">
+  04.浏览器与安全
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="01.框架" class="dropdown-title"><span class="title">01.框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/01.框架/00.Vue/00.Vue核心原理解析.html" class="nav-link">
+  00.Vue
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/notes/02.原理探究/00.call、apply、bind.html" class="nav-link">
+  02.原理探究
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="03.自动化与部署" class="dropdown-title"><span class="title">03.自动化与部署</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/03.自动化与部署/webpack/webpack4.html" class="nav-link">
+  webpack
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/notes/04.设计模式/中介者模式.html" class="nav-link">
+  04.设计模式
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="05.数据结构与算法" class="dropdown-title"><span class="title">05.数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/05.数据结构与算法/00.数据结构/00.栈.html" class="nav-link">
+  00.数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/05.数据结构与算法/01.算法修炼/00.冒泡排序.html" class="nav-link">
+  01.算法修炼
+</a></li></ul></div></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/notes/04.设计模式/中介者模式.html" class="sidebar-link">中介者模式</a></li><li><a href="/blog/notes/04.设计模式/代理模式.html" class="sidebar-link">代理模式</a></li><li><a href="/blog/notes/04.设计模式/单例模式.html" class="sidebar-link">单例模式</a></li><li><a href="/blog/notes/04.设计模式/发布订阅模式.html" class="sidebar-link">发布-订阅模式</a></li><li><a href="/blog/notes/04.设计模式/命令模式.html" class="active sidebar-link">命令模式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/notes/04.设计模式/命令模式.html#应用场景" class="sidebar-link">应用场景</a></li><li class="sidebar-sub-header"><a href="/blog/notes/04.设计模式/命令模式.html#生活场景" class="sidebar-link">生活场景</a></li><li class="sidebar-sub-header"><a href="/blog/notes/04.设计模式/命令模式.html#思路" class="sidebar-link">思路</a></li><li class="sidebar-sub-header"><a href="/blog/notes/04.设计模式/命令模式.html#使用" class="sidebar-link">使用</a></li></ul></li><li><a href="/blog/notes/04.设计模式/模板方法模式.html" class="sidebar-link">模板方法模式</a></li><li><a href="/blog/notes/04.设计模式/策略模式.html" class="sidebar-link">策略模式</a></li><li><a href="/blog/notes/04.设计模式/职责链模式.html" class="sidebar-link">职责链模式</a></li><li><a href="/blog/notes/04.设计模式/装饰者模式.html" class="sidebar-link">装饰者模式</a></li><li><a href="/blog/notes/04.设计模式/适配器模式.html" class="sidebar-link">适配器模式</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="命令模式"><a href="#命令模式" class="header-anchor">#</a> 命令模式</h1> <p>一个执行某些特定事情的指令。</p> <h2 id="应用场景"><a href="#应用场景" class="header-anchor">#</a> 应用场景</h2> <p>有时候需要向某些对象发送请求，但是并不知道请求的接收者是谁，也不知道请求的操作是什么，此时希望用一种松耦合的方式来设计程序，使得请求发送者和接受者可以消除彼此之间的耦合关系。</p> <h2 id="生活场景"><a href="#生活场景" class="header-anchor">#</a> 生活场景</h2> <p>订餐，客人需要向厨师发送请求，但是完全不知道这些厨师的名字和联系方式，也不知道厨师炒菜的方式和步骤。</p> <p>命令模式把客人订餐的请求封装成 command 对象，也就是订餐中的订单对象。这个订单对象可以在程序中被四处传递，就像订单可以从服务员手中传送到厨师手中。这样一来，客人不需要知道厨师的名字，从而解开了请求调用者和请求接收者之间的耦合关系。</p> <h2 id="思路"><a href="#思路" class="header-anchor">#</a> 思路</h2> <p>将过程式的请求调用封装在 command 对象的 execute 方法里，通过封装方法调用，我们可以把运算块包装成形。</p> <h2 id="使用"><a href="#使用" class="header-anchor">#</a> 使用</h2> <h3 id="面向对象中的命令模式"><a href="#面向对象中的命令模式" class="header-anchor">#</a> 面向对象中的命令模式</h3> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> btn1 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#btn1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// setCommand 负责往按钮上安装命令</span>
+<span class="token keyword">const</span> <span class="token function-variable function">setCommand</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">button<span class="token punctuation">,</span> command</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  button<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    command<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 功能模块</span>
+<span class="token keyword">const</span> menuBar <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">refresh</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'刷新菜单目录'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 将功能封装到命令类中</span>
+<span class="token keyword">class</span> <span class="token class-name">RefreshMenuCommand</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">reveiver</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>reveiver <span class="token operator">=</span> reveiver<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>reveiver<span class="token punctuation">.</span><span class="token function">refresh</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 将命令接受者传入 command 对象中，并把 command 对象安装到 btn 上</span>
+<span class="token function">setCommand</span><span class="token punctuation">(</span>btn1<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">RefreshMenuCommand</span><span class="token punctuation">(</span>menuBar<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="javascript-中的命令模式"><a href="#javascript-中的命令模式" class="header-anchor">#</a> JavaScript 中的命令模式</h3> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> btn1 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#btn1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 功能模块</span>
+<span class="token keyword">const</span> menuBar <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">refresh</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'刷新菜单界面'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 命令</span>
+<span class="token keyword">const</span> <span class="token function-variable function">refreshMenuCommand</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">receiver</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">execute</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      receiver<span class="token punctuation">.</span><span class="token function">refresh</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 往按钮上安装命令</span>
+<span class="token keyword">const</span> <span class="token function-variable function">setCommand</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">button<span class="token punctuation">,</span> command</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  button<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    command<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">setCommand</span><span class="token punctuation">(</span>btn1<span class="token punctuation">,</span> <span class="token function">refreshMenuCommand</span><span class="token punctuation">(</span>menuBar<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="撤销和重做"><a href="#撤销和重做" class="header-anchor">#</a> 撤销和重做</h3> <p>思路：将执行过的命令保存在堆栈中，然后重复执行他们。</p> <h6 id="demo-在键盘上敲下-w、a、s、d这几个键完成一些动作之后，按下-replay-按钮来重复播放之前的动作。"><a href="#demo-在键盘上敲下-w、a、s、d这几个键完成一些动作之后，按下-replay-按钮来重复播放之前的动作。" class="header-anchor">#</a> demo: 在键盘上敲下 W、A、S、D这几个键完成一些动作之后，按下 Replay 按钮来重复播放之前的动作。</h6> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code>
+<span class="token comment">// 功能模块</span>
+<span class="token keyword">const</span> ryu <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">attack</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'攻击'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">defense</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'防御'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">jump</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'跳跃'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">crouch</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'蹲下'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 创建命令</span>
+<span class="token keyword">const</span> <span class="token function-variable function">mackCommand</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">receiver<span class="token punctuation">,</span> state</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    receiver<span class="token punctuation">[</span>state<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> commands <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token string">'119'</span><span class="token operator">:</span> <span class="token string">'jump'</span><span class="token punctuation">,</span> <span class="token comment">//W</span>
+  <span class="token string">'115'</span><span class="token operator">:</span> <span class="token string">'crouch'</span><span class="token punctuation">,</span> <span class="token comment">//s</span>
+  <span class="token string">'97'</span><span class="token operator">:</span> <span class="token string">'defense'</span><span class="token punctuation">,</span> <span class="token comment">//A</span>
+  <span class="token string">'100'</span><span class="token operator">:</span> <span class="token string">'attack'</span> <span class="token comment">//d</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> commandStack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 保存命令堆栈</span>
+
+document<span class="token punctuation">.</span><span class="token function-variable function">onkeypress</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">ev</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> keycode <span class="token operator">=</span> ev<span class="token punctuation">.</span>keyCode<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> command <span class="token operator">=</span> <span class="token function">mackCommand</span><span class="token punctuation">(</span>ryu<span class="token punctuation">,</span> commands<span class="token punctuation">[</span>keycode<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>command<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">command</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//执行命令</span>
+    commandStack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>command<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//将刚刚执行过得命令保存仅堆栈</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="宏命令"><a href="#宏命令" class="header-anchor">#</a> 宏命令</h3> <p>宏命令是一组命令的集合，通过执行宏命令的方式，可以一次执行一批命令。</p> <p>思路：</p> <ul><li>第一步：定义宏命令<code>macroCommand</code></li> <li>第二步：定义<code>macroCommand.add</code>方法将自命令添加进宏命令对象</li> <li>第三步：定义<code>macroCommand.execute</code>来迭代这一组宏命令，并依次执行他们的<code>execute</code>方法</li></ul> <h6 id="demo-万能遥控器发布命令，依次执行关门、开电脑、登录qq的动作。"><a href="#demo-万能遥控器发布命令，依次执行关门、开电脑、登录qq的动作。" class="header-anchor">#</a> demo 万能遥控器发布命令，依次执行关门、开电脑、登录QQ的动作。</h6> <div class="language- extra-class"><pre class="language-text"><code>// 命令模块
+const closeDoorCommand = {
+  execute: () =&gt; console.log('关门')
+}
+
+const openPcCommand = {
+  execute: () =&gt; console.log('开电脑')
+}
+
+const openQQCommand = {
+  execute: () =&gt; console.log('登录QQ')
+}
+
+// 宏命令
+const macroCommand = () =&gt; {
+  return {
+    commandList: [],
+    add: function (command) {
+      this.commandList.push(command);
+      return this;
+    },
+    execute: function () {
+      this.commandList.forEach(command =&gt; {
+        command.execute();
+      })
+      return this;
+    }
+  }
+}
+
+// 使用
+macroCommand()
+  .add(closeDoorCommand)
+  .add(openPcCommand)
+  .add(openQQCommand)
+  .execute();
+
+//依次输出：关门、开电脑、登录QQ
+</code></pre></div><h3 id="智能命令-傻瓜命令"><a href="#智能命令-傻瓜命令" class="header-anchor">#</a> 智能命令 &amp; 傻瓜命令</h3> <h4 id="傻瓜命令"><a href="#傻瓜命令" class="header-anchor">#</a> 傻瓜命令</h4> <p>在 command 对象中保存一个接收者来负责执行客户的请求，它只负责把客户的请求转交给接收者来执行。</p> <p>这样模式的好处是<code>请求发起者</code>和<code>请求接收者</code>尽可能的得到了解耦。</p> <p>如：</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token comment">// 功能模块</span>
+<span class="token keyword">const</span> menuBar <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">refresh</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'刷新菜单界面'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 命令</span>
+<span class="token keyword">const</span> <span class="token function-variable function">refreshMenuCommand</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">receiver</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">execute</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      receiver<span class="token punctuation">.</span><span class="token function">refresh</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="智能命令"><a href="#智能命令" class="header-anchor">#</a> 智能命令</h4> <p>智能的命令对象可以直接实现请求，不需要接收者的存在。</p> <p>如：</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> closeDoorCommand <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">execute</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'关门'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/notes/04.设计模式/发布订阅模式.html" class="prev">
+        发布-订阅模式
+      </a></span> <span class="next"><a href="/blog/notes/04.设计模式/模板方法模式.html">
+        模板方法模式
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.80d78e54.js" defer></script><script src="/blog/assets/js/2.6c5a5ebc.js" defer></script><script src="/blog/assets/js/28.035bde5e.js" defer></script>
+  </body>
+</html>

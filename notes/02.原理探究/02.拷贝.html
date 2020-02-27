@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>赋值 &amp; 浅拷贝 &amp; 深拷贝 | ❤️❤️❤️</title>
+    <meta name="description" content="前端，开发，进阶，笔记">
+    <meta name="generator" content="VuePress 1.3.0">
+    
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.ac634132.css" as="style"><link rel="preload" href="/blog/assets/js/app.80d78e54.js" as="script"><link rel="preload" href="/blog/assets/js/2.6c5a5ebc.js" as="script"><link rel="preload" href="/blog/assets/js/21.e2b8ea91.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.8da95c9f.js"><link rel="prefetch" href="/blog/assets/js/11.c593a547.js"><link rel="prefetch" href="/blog/assets/js/12.f1c08ffe.js"><link rel="prefetch" href="/blog/assets/js/13.767832f8.js"><link rel="prefetch" href="/blog/assets/js/14.2a2b4737.js"><link rel="prefetch" href="/blog/assets/js/15.51d396b0.js"><link rel="prefetch" href="/blog/assets/js/16.32a1ca02.js"><link rel="prefetch" href="/blog/assets/js/17.b55e63c6.js"><link rel="prefetch" href="/blog/assets/js/18.b9d4e361.js"><link rel="prefetch" href="/blog/assets/js/19.7281e615.js"><link rel="prefetch" href="/blog/assets/js/20.91621a19.js"><link rel="prefetch" href="/blog/assets/js/22.6caedcc0.js"><link rel="prefetch" href="/blog/assets/js/23.b514fea6.js"><link rel="prefetch" href="/blog/assets/js/24.4f2afd9d.js"><link rel="prefetch" href="/blog/assets/js/25.99f5d4ec.js"><link rel="prefetch" href="/blog/assets/js/26.ca72e1f6.js"><link rel="prefetch" href="/blog/assets/js/27.c2c83ead.js"><link rel="prefetch" href="/blog/assets/js/28.035bde5e.js"><link rel="prefetch" href="/blog/assets/js/29.c9fb3c04.js"><link rel="prefetch" href="/blog/assets/js/3.315dffdd.js"><link rel="prefetch" href="/blog/assets/js/30.09593c06.js"><link rel="prefetch" href="/blog/assets/js/31.70c4296c.js"><link rel="prefetch" href="/blog/assets/js/32.0abbc4ea.js"><link rel="prefetch" href="/blog/assets/js/33.31a4f07e.js"><link rel="prefetch" href="/blog/assets/js/34.132654a5.js"><link rel="prefetch" href="/blog/assets/js/35.a77003b9.js"><link rel="prefetch" href="/blog/assets/js/36.c8c0dc61.js"><link rel="prefetch" href="/blog/assets/js/37.bc748c14.js"><link rel="prefetch" href="/blog/assets/js/38.ed34adeb.js"><link rel="prefetch" href="/blog/assets/js/39.b30739ec.js"><link rel="prefetch" href="/blog/assets/js/4.03ca44f5.js"><link rel="prefetch" href="/blog/assets/js/40.5d8d1919.js"><link rel="prefetch" href="/blog/assets/js/41.d2f80426.js"><link rel="prefetch" href="/blog/assets/js/42.34bdf90e.js"><link rel="prefetch" href="/blog/assets/js/5.83154436.js"><link rel="prefetch" href="/blog/assets/js/6.0b9eae7f.js"><link rel="prefetch" href="/blog/assets/js/7.cb853795.js"><link rel="prefetch" href="/blog/assets/js/8.1e9d1614.js"><link rel="prefetch" href="/blog/assets/js/9.46c1a5cb.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.ac634132.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">❤️❤️❤️</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="00.前端" class="dropdown-title"><span class="title">00.前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/00.HTML5/00.基础.html" class="nav-link">
+  00.HTML5
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/01.JavaScript/00.ES6-函数.html" class="nav-link">
+  01.JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/03.HTTP/00.tcpip协议族.html" class="nav-link">
+  03.HTTP
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/04.浏览器与安全/00.浏览器的渲染原理详解.html" class="nav-link">
+  04.浏览器与安全
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="01.框架" class="dropdown-title"><span class="title">01.框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/01.框架/00.Vue/00.Vue核心原理解析.html" class="nav-link">
+  00.Vue
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/notes/02.原理探究/00.call、apply、bind.html" class="nav-link">
+  02.原理探究
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="03.自动化与部署" class="dropdown-title"><span class="title">03.自动化与部署</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/03.自动化与部署/webpack/webpack4.html" class="nav-link">
+  webpack
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/notes/04.设计模式/中介者模式.html" class="nav-link">
+  04.设计模式
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="05.数据结构与算法" class="dropdown-title"><span class="title">05.数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/05.数据结构与算法/00.数据结构/00.栈.html" class="nav-link">
+  00.数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/05.数据结构与算法/01.算法修炼/00.冒泡排序.html" class="nav-link">
+  01.算法修炼
+</a></li></ul></div></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="00.前端" class="dropdown-title"><span class="title">00.前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/00.HTML5/00.基础.html" class="nav-link">
+  00.HTML5
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/01.JavaScript/00.ES6-函数.html" class="nav-link">
+  01.JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/03.HTTP/00.tcpip协议族.html" class="nav-link">
+  03.HTTP
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/04.浏览器与安全/00.浏览器的渲染原理详解.html" class="nav-link">
+  04.浏览器与安全
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="01.框架" class="dropdown-title"><span class="title">01.框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/01.框架/00.Vue/00.Vue核心原理解析.html" class="nav-link">
+  00.Vue
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/notes/02.原理探究/00.call、apply、bind.html" class="nav-link">
+  02.原理探究
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="03.自动化与部署" class="dropdown-title"><span class="title">03.自动化与部署</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/03.自动化与部署/webpack/webpack4.html" class="nav-link">
+  webpack
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/notes/04.设计模式/中介者模式.html" class="nav-link">
+  04.设计模式
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="05.数据结构与算法" class="dropdown-title"><span class="title">05.数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/05.数据结构与算法/00.数据结构/00.栈.html" class="nav-link">
+  00.数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/05.数据结构与算法/01.算法修炼/00.冒泡排序.html" class="nav-link">
+  01.算法修炼
+</a></li></ul></div></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/notes/02.原理探究/00.call、apply、bind.html" class="sidebar-link">call、apply、bind</a></li><li><a href="/blog/notes/02.原理探究/01.new.html" class="sidebar-link">new</a></li><li><a href="/blog/notes/02.原理探究/02.拷贝.html" class="active sidebar-link">赋值 &amp; 浅拷贝 &amp; 深拷贝</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/notes/02.原理探究/02.拷贝.html#赋值-浅拷贝-深拷贝" class="sidebar-link">赋值 &amp; 浅拷贝 &amp; 深拷贝</a></li></ul></li><li><a href="/blog/notes/02.原理探究/03.Promise.html" class="sidebar-link">Promise</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="赋值-浅拷贝-深拷贝"><a href="#赋值-浅拷贝-深拷贝" class="header-anchor">#</a> 赋值 &amp; 浅拷贝 &amp; 深拷贝</h2> <p>🍃 资料：<a href="https://muyiy.cn/blog/4/4.3.html#%E5%8F%82%E8%80%83" target="_blank" rel="noopener noreferrer">深浅拷贝原理<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <ul><li><p>赋值：将某一数值或对象赋值给某个变量的过程</p> <ol><li>基本数据类型：赋值，赋值之后两个变量互不影响</li> <li>引用数据类型：赋值，两个变量具有相同的引用，指向同一个对象，相互之间有影响</li></ol></li> <li><p>浅拷贝：创建一个新对象，这个对象有原始对象属性值的一份拷贝。</p> <ol><li>属性是基本类型：拷贝的是基本类型的值，和原始对象对应的那个属性互不影响</li> <li>属性是引用类型：拷贝的是内存地址，其中一个对象改变了这个地址会影响到另一个对象</li></ol> <p>常见的浅拷贝：<code>Object.assign()</code>、<code>展开语法 {...}</code>、<code>Array.prototype.slice()</code></p></li> <li><p>深拷贝：深拷贝会拷贝所有的属性，并拷贝属性指向的动态分配的内存。</p> <p>深拷贝前后两个对象互不影响，不论属性是基本类型还是引用类型</p></li></ul> <h3 id="object-assign"><a href="#object-assign" class="header-anchor">#</a> Object.assign</h3> <p>Object.assign 可以将所有<code>可枚举属性</code>的值从一个或多个源对象复制到目标对象，同时返回目标对象</p> <p>语法：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// target：目标对象，source：源对象[可以多个]</span>
+Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> <span class="token operator">...</span>sources<span class="token punctuation">)</span>
+</code></pre></div><p>注意：</p> <ul><li>assign 为浅拷贝，基本类型进行<code>值</code>拷贝，引用类型进行<code>址</code>拷贝</li> <li>只能复制源对象中的<code>可枚举属性</code>，继承的以及<code>enumerable: false</code>的属性都不能被拷贝</li> <li>对象目标对象中已经存在的属性，源对象会根据在 <code>arguments</code>中的顺序进行依次覆盖</li> <li>目标对象不能为 null 和 undefined</li> <li>源对象中 String 和 Symbol 类型的属性都会被拷贝，而且不会跳过值为 null、undefined 的源对象</li></ul> <p>思路：</p> <ol><li>先对目标对象进行检测，如果为<code>null || undefined</code>，抛错</li> <li>用<code>Object.defineProperty</code>定义 assign 属性。</li> <li>对<code>arguments</code>中的源对象用<code>for ..of</code>依次进行属性遍历，用<code>Object.hasOwnProperty</code>进行属性检查，有则进行覆盖，没有则创建属性进行赋值（址）。</li></ol> <p>实现：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> Object<span class="token punctuation">.</span>_assign <span class="token operator">!==</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+  <span class="token comment">// 原生情况下挂在在 Object 上的属性是不可枚举的，所以要使用 Object.defineProperty，并设置 enumerable: false; writable: true; configurable: true</span>
+  Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>Object<span class="token punctuation">,</span> <span class="token string">'_assign'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">value</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">target</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 判断目标对象，目标对象不可为 null/undefined</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>target <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">TypeError</span><span class="token punctuation">(</span><span class="token string">'Cannot convert undefined or null to object'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment">// 目标对象是原始类型（如：target = 'abc'）会被包装成对象，方法：Object(...)</span>
+      <span class="token keyword">var</span> to <span class="token operator">=</span> <span class="token function">Object</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// 参数从第二项开始为源对象</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> index <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> index <span class="token operator">&lt;</span> arguments<span class="token punctuation">.</span>length<span class="token punctuation">;</span> index<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> nextSource <span class="token operator">=</span> arguments<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token comment">// 原目标如果是 null、undefined 会被过滤</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>nextSource <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 使用 for..in 遍历对象 nextSource 获取属性值，此处会同时检查其原型链上的属性</span>
+          <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> nextKey <span class="token keyword">in</span> nextSource<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 使用 hasOwnProperty 判断对象 nextSource 中是否存在属性 nextKey，过滤掉原型链上的属性</span>
+            <span class="token comment">// 直接使用 myObject.hasOwnProperty(..) 是有问题的，因为有的对象可能没有连接到 Object.prototype 上（比如通过 Object.create(null) 来创建），这种情况下，使用 myObject.hasOwnProperty(..) 就会失败，因此要借助 call</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>nextSource<span class="token punctuation">,</span> nextKey<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              to<span class="token punctuation">[</span>nextKey<span class="token punctuation">]</span> <span class="token operator">=</span> nextSource<span class="token punctuation">[</span>nextKey<span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> to<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// enumerable: false, 默认不可枚举 </span>
+    <span class="token comment">// 可写</span>
+    writable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token comment">// 可配置</span>
+    configurable<span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>验证：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+<span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'lily'</span><span class="token punctuation">,</span>
+  age<span class="token operator">:</span> <span class="token number">18</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token punctuation">{</span>
+  b1<span class="token operator">:</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">'lily'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  b2<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  b3<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span>
+  name<span class="token operator">:</span> <span class="token string">'duck'</span><span class="token punctuation">,</span>
+  book<span class="token operator">:</span> <span class="token punctuation">{</span>
+    title<span class="token operator">:</span> <span class="token string">'anskbfu ndlfu'</span><span class="token punctuation">,</span>
+    price<span class="token operator">:</span> <span class="token number">11</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">let</span> d <span class="token operator">=</span> <span class="token punctuation">{</span>
+  d1<span class="token operator">:</span> <span class="token number">111111</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> c <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">_assign</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// {</span>
+<span class="token comment">//   name: 'duck',</span>
+<span class="token comment">//   age: 18,</span>
+<span class="token comment">//   b1: Symbol(lily),</span>
+<span class="token comment">//   b2: null,</span>
+<span class="token comment">//   b3: undefined,</span>
+<span class="token comment">//   book: { title: 'anskbfu ndlfu', price: 11 },</span>
+<span class="token comment">//   d1: 111111</span>
+<span class="token comment">// }</span>
+</code></pre></div><h3 id="深拷贝"><a href="#深拷贝" class="header-anchor">#</a> 深拷贝</h3> <p>思路：浅拷贝 + 递归，浅拷贝时判断属性值是否是对象，如果是对象就进行递归操作</p> <h4 id="简易版"><a href="#简易版" class="header-anchor">#</a> 简易版</h4> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+
+<span class="token keyword">function</span> <span class="token function">cloneDeep</span><span class="token punctuation">(</span><span class="token parameter">source</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> target <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span>key <span class="token keyword">in</span> source<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>source<span class="token punctuation">,</span> key<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+      <span class="token comment">// 如果值是引用类型，进行递归</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> source<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token string">'object'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        target<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">cloneDeep</span><span class="token punctuation">(</span>source<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 基本类型直接赋值</span>
+        target<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> source<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> target<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>验证：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token punctuation">{</span>
+  b1<span class="token operator">:</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">'lily'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  b2<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+  b3<span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span>
+  name<span class="token operator">:</span> <span class="token string">'duck'</span><span class="token punctuation">,</span>
+  book<span class="token operator">:</span> <span class="token punctuation">{</span>
+    title<span class="token operator">:</span> <span class="token string">'anskbfu ndlfu'</span><span class="token punctuation">,</span>
+    price<span class="token operator">:</span> <span class="token number">11</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword">var</span> r <span class="token operator">=</span> <span class="token function">cloneDeep</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// {</span>
+<span class="token comment">//   b1: Symbol(lily),</span>
+<span class="token comment">//   b2: {},</span>
+<span class="token comment">//   b3: undefined,</span>
+<span class="token comment">//   name: 'duck',</span>
+<span class="token comment">//   book: { title: 'anskbfu ndlfu', price: 11 }</span>
+<span class="token comment">// }</span>
+b<span class="token punctuation">.</span>book<span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token string">'dddddd'</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// {</span>
+<span class="token comment">//   b1: Symbol(lily),</span>
+<span class="token comment">//   b2: {},</span>
+<span class="token comment">//   b3: undefined,</span>
+<span class="token comment">//   name: 'duck',</span>
+<span class="token comment">//   book: { title: 'anskbfu ndlfu', price: 11 }</span>
+<span class="token comment">// }</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/notes/02.原理探究/01.new.html" class="prev">
+        new
+      </a></span> <span class="next"><a href="/blog/notes/02.原理探究/03.Promise.html">
+        Promise
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.80d78e54.js" defer></script><script src="/blog/assets/js/2.6c5a5ebc.js" defer></script><script src="/blog/assets/js/21.e2b8ea91.js" defer></script>
+  </body>
+</html>

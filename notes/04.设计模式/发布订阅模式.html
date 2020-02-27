@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>发布-订阅模式 | ❤️❤️❤️</title>
+    <meta name="description" content="前端，开发，进阶，笔记">
+    <meta name="generator" content="VuePress 1.3.0">
+    
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.ac634132.css" as="style"><link rel="preload" href="/blog/assets/js/app.80d78e54.js" as="script"><link rel="preload" href="/blog/assets/js/2.6c5a5ebc.js" as="script"><link rel="preload" href="/blog/assets/js/27.c2c83ead.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.8da95c9f.js"><link rel="prefetch" href="/blog/assets/js/11.c593a547.js"><link rel="prefetch" href="/blog/assets/js/12.f1c08ffe.js"><link rel="prefetch" href="/blog/assets/js/13.767832f8.js"><link rel="prefetch" href="/blog/assets/js/14.2a2b4737.js"><link rel="prefetch" href="/blog/assets/js/15.51d396b0.js"><link rel="prefetch" href="/blog/assets/js/16.32a1ca02.js"><link rel="prefetch" href="/blog/assets/js/17.b55e63c6.js"><link rel="prefetch" href="/blog/assets/js/18.b9d4e361.js"><link rel="prefetch" href="/blog/assets/js/19.7281e615.js"><link rel="prefetch" href="/blog/assets/js/20.91621a19.js"><link rel="prefetch" href="/blog/assets/js/21.e2b8ea91.js"><link rel="prefetch" href="/blog/assets/js/22.6caedcc0.js"><link rel="prefetch" href="/blog/assets/js/23.b514fea6.js"><link rel="prefetch" href="/blog/assets/js/24.4f2afd9d.js"><link rel="prefetch" href="/blog/assets/js/25.99f5d4ec.js"><link rel="prefetch" href="/blog/assets/js/26.ca72e1f6.js"><link rel="prefetch" href="/blog/assets/js/28.035bde5e.js"><link rel="prefetch" href="/blog/assets/js/29.c9fb3c04.js"><link rel="prefetch" href="/blog/assets/js/3.315dffdd.js"><link rel="prefetch" href="/blog/assets/js/30.09593c06.js"><link rel="prefetch" href="/blog/assets/js/31.70c4296c.js"><link rel="prefetch" href="/blog/assets/js/32.0abbc4ea.js"><link rel="prefetch" href="/blog/assets/js/33.31a4f07e.js"><link rel="prefetch" href="/blog/assets/js/34.132654a5.js"><link rel="prefetch" href="/blog/assets/js/35.a77003b9.js"><link rel="prefetch" href="/blog/assets/js/36.c8c0dc61.js"><link rel="prefetch" href="/blog/assets/js/37.bc748c14.js"><link rel="prefetch" href="/blog/assets/js/38.ed34adeb.js"><link rel="prefetch" href="/blog/assets/js/39.b30739ec.js"><link rel="prefetch" href="/blog/assets/js/4.03ca44f5.js"><link rel="prefetch" href="/blog/assets/js/40.5d8d1919.js"><link rel="prefetch" href="/blog/assets/js/41.d2f80426.js"><link rel="prefetch" href="/blog/assets/js/42.34bdf90e.js"><link rel="prefetch" href="/blog/assets/js/5.83154436.js"><link rel="prefetch" href="/blog/assets/js/6.0b9eae7f.js"><link rel="prefetch" href="/blog/assets/js/7.cb853795.js"><link rel="prefetch" href="/blog/assets/js/8.1e9d1614.js"><link rel="prefetch" href="/blog/assets/js/9.46c1a5cb.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.ac634132.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">❤️❤️❤️</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="00.前端" class="dropdown-title"><span class="title">00.前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/00.HTML5/00.基础.html" class="nav-link">
+  00.HTML5
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/01.JavaScript/00.ES6-函数.html" class="nav-link">
+  01.JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/03.HTTP/00.tcpip协议族.html" class="nav-link">
+  03.HTTP
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/04.浏览器与安全/00.浏览器的渲染原理详解.html" class="nav-link">
+  04.浏览器与安全
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="01.框架" class="dropdown-title"><span class="title">01.框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/01.框架/00.Vue/00.Vue核心原理解析.html" class="nav-link">
+  00.Vue
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/notes/02.原理探究/00.call、apply、bind.html" class="nav-link">
+  02.原理探究
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="03.自动化与部署" class="dropdown-title"><span class="title">03.自动化与部署</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/03.自动化与部署/webpack/webpack4.html" class="nav-link">
+  webpack
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/notes/04.设计模式/中介者模式.html" class="nav-link">
+  04.设计模式
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="05.数据结构与算法" class="dropdown-title"><span class="title">05.数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/05.数据结构与算法/00.数据结构/00.栈.html" class="nav-link">
+  00.数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/05.数据结构与算法/01.算法修炼/00.冒泡排序.html" class="nav-link">
+  01.算法修炼
+</a></li></ul></div></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="00.前端" class="dropdown-title"><span class="title">00.前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/00.HTML5/00.基础.html" class="nav-link">
+  00.HTML5
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/01.JavaScript/00.ES6-函数.html" class="nav-link">
+  01.JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/03.HTTP/00.tcpip协议族.html" class="nav-link">
+  03.HTTP
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/04.浏览器与安全/00.浏览器的渲染原理详解.html" class="nav-link">
+  04.浏览器与安全
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="01.框架" class="dropdown-title"><span class="title">01.框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/01.框架/00.Vue/00.Vue核心原理解析.html" class="nav-link">
+  00.Vue
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/notes/02.原理探究/00.call、apply、bind.html" class="nav-link">
+  02.原理探究
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="03.自动化与部署" class="dropdown-title"><span class="title">03.自动化与部署</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/03.自动化与部署/webpack/webpack4.html" class="nav-link">
+  webpack
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/notes/04.设计模式/中介者模式.html" class="nav-link">
+  04.设计模式
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="05.数据结构与算法" class="dropdown-title"><span class="title">05.数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/05.数据结构与算法/00.数据结构/00.栈.html" class="nav-link">
+  00.数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/05.数据结构与算法/01.算法修炼/00.冒泡排序.html" class="nav-link">
+  01.算法修炼
+</a></li></ul></div></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/notes/04.设计模式/中介者模式.html" class="sidebar-link">中介者模式</a></li><li><a href="/blog/notes/04.设计模式/代理模式.html" class="sidebar-link">代理模式</a></li><li><a href="/blog/notes/04.设计模式/单例模式.html" class="sidebar-link">单例模式</a></li><li><a href="/blog/notes/04.设计模式/发布订阅模式.html" class="active sidebar-link">发布-订阅模式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/notes/04.设计模式/发布订阅模式.html#实现一个通用的发布-订阅模式模板" class="sidebar-link">实现一个通用的发布-订阅模式模板</a></li></ul></li><li><a href="/blog/notes/04.设计模式/命令模式.html" class="sidebar-link">命令模式</a></li><li><a href="/blog/notes/04.设计模式/模板方法模式.html" class="sidebar-link">模板方法模式</a></li><li><a href="/blog/notes/04.设计模式/策略模式.html" class="sidebar-link">策略模式</a></li><li><a href="/blog/notes/04.设计模式/职责链模式.html" class="sidebar-link">职责链模式</a></li><li><a href="/blog/notes/04.设计模式/装饰者模式.html" class="sidebar-link">装饰者模式</a></li><li><a href="/blog/notes/04.设计模式/适配器模式.html" class="sidebar-link">适配器模式</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="发布-订阅模式"><a href="#发布-订阅模式" class="header-anchor">#</a> 发布-订阅模式</h1> <p>又称观察者模式，它定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都将得到通知。</p> <h2 id="实现一个通用的发布-订阅模式模板"><a href="#实现一个通用的发布-订阅模式模板" class="header-anchor">#</a> 实现一个通用的发布-订阅模式模板</h2> <ul><li>首先制定好谁充当发布者</li> <li>然后给发布者添加一个缓存列表，用于存放回调函数以便通知订阅者</li> <li>最后发布消息的时候，发布者会遍历这个缓存列表，一次触发里面存放的订阅者回调函数</li></ul> <p>代码如下：</p> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token comment">// 发布者</span>
+<span class="token keyword">const</span> event <span class="token operator">=</span> <span class="token punctuation">{</span>
+  clientList<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 收集订阅</span>
+  <span class="token function-variable function">listen</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">key<span class="token punctuation">,</span> fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>clientList<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>clientList<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//订阅的消息添加到缓存列表</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>clientList<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 触发订阅</span>
+  <span class="token function-variable function">trigger</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> key <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> fns <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>clientList<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>fns <span class="token operator">||</span> fns<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>fn <span class="token keyword">of</span> fns<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 移除订阅事件</span>
+  <span class="token function-variable function">remove</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">key<span class="token punctuation">,</span> fn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> fns <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>clientList<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 如果 key 对应的消息没有被订阅，则直接返回</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>fns<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>fn<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">//如果没有传入具体的回调函数，标识需要取消 key 对应消息的所有订阅</span>
+      fns <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>fns<span class="token punctuation">.</span>length <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 删除订阅者的回调函数</span>
+      fns<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">value<span class="token punctuation">,</span> key</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">===</span> fn<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          fns<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 定义 installEvent，它可以给所有对象动态安装发布 - 订阅功能</span>
+<span class="token keyword">const</span> <span class="token function-variable function">installEvent</span> <span class="token operator">=</span> <span class="token parameter">obj</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token keyword">in</span> event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    obj<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> event<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>🍃基于上面模板，来实现几个例子：</p> <h6 id="demo01：小明等人去售楼处买房，但是到了售楼处被告知已售罄，销售人员告诉他不久后还有一些尾盘推出，开发商正在办理手续，手续好后便可购买，但是具体什么时候不清楚，小明在离开前，把电话号码留在了售楼处，销售人员答应他新楼盘一推出马上发消息给他们，他们的电话号码被记在售楼处的发名册上，新楼盘推出的时候，销售人员会翻开花名册，遍历上面的电话号码，依次发送一条短信来通知他们。"><a href="#demo01：小明等人去售楼处买房，但是到了售楼处被告知已售罄，销售人员告诉他不久后还有一些尾盘推出，开发商正在办理手续，手续好后便可购买，但是具体什么时候不清楚，小明在离开前，把电话号码留在了售楼处，销售人员答应他新楼盘一推出马上发消息给他们，他们的电话号码被记在售楼处的发名册上，新楼盘推出的时候，销售人员会翻开花名册，遍历上面的电话号码，依次发送一条短信来通知他们。" class="header-anchor">#</a> demo01：小明等人去售楼处买房，但是到了售楼处被告知已售罄，销售人员告诉他不久后还有一些尾盘推出，开发商正在办理手续，手续好后便可购买，但是具体什么时候不清楚，小明在离开前，把电话号码留在了售楼处，销售人员答应他新楼盘一推出马上发消息给他们，他们的电话号码被记在售楼处的发名册上，新楼盘推出的时候，销售人员会翻开花名册，遍历上面的电话号码，依次发送一条短信来通知他们。</h6> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code>
+<span class="token comment">// 给售楼处对象 salesOffices 动态添加发布-订阅功能</span>
+<span class="token keyword">const</span> salesOffices <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token function">installEvent</span><span class="token punctuation">(</span>salesOffices<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 订阅者，监听发布者消息</span>
+salesOffices<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token string">'squareMeter88'</span><span class="token punctuation">,</span> <span class="token function-variable function">fn1</span> <span class="token operator">=</span> <span class="token parameter">price</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">fn1:88平米价格：</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>price<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+salesOffices<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token string">'squareMeter100'</span><span class="token punctuation">,</span> <span class="token function-variable function">fn2</span> <span class="token operator">=</span> <span class="token parameter">price</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">fn2:100平米价格：</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>price<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+salesOffices<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token string">'squareMeter100'</span><span class="token punctuation">,</span> <span class="token function-variable function">fn3</span> <span class="token operator">=</span> <span class="token parameter">price</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">fn3:100平米价格：</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>price<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// fn1、fn2 不想买房子了，发布者可以取消他们的订阅</span>
+salesOffices<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">'squareMeter88'</span><span class="token punctuation">,</span> fn1<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//移除fn1的订阅</span>
+salesOffices<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">'squareMeter100'</span><span class="token punctuation">,</span> fn3<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//移除fn3的订阅</span>
+
+<span class="token comment">// 发布者开始发送消息</span>
+salesOffices<span class="token punctuation">.</span><span class="token function">trigger</span><span class="token punctuation">(</span><span class="token string">'squareMeter100'</span><span class="token punctuation">,</span> <span class="token number">3000000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//fn2:100平米价格：3000000</span>
+</code></pre></div><h6 id="demo02：商城开发，网站里的-header-头部、nav-导航等模块在渲染的时候需要请求后端接口数据拿到用户的登录信息，然后根据信息来渲染各自的模块。"><a href="#demo02：商城开发，网站里的-header-头部、nav-导航等模块在渲染的时候需要请求后端接口数据拿到用户的登录信息，然后根据信息来渲染各自的模块。" class="header-anchor">#</a> demo02：商城开发，网站里的 header 头部、nav 导航等模块在渲染的时候需要请求后端接口数据拿到用户的登录信息，然后根据信息来渲染各自的模块。</h6> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token comment">// 注册 login 发布者</span>
+<span class="token keyword">const</span> login <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token function">installEvent</span><span class="token punctuation">(</span>login<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> btn <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'#btn'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+<span class="token comment">// 模拟登录，登录成功后，发布登录成功的消息</span>
+btn<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'登录成功'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  login<span class="token punctuation">.</span><span class="token function">trigger</span><span class="token punctuation">(</span><span class="token string">'loginSuc'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    avatar<span class="token operator">:</span> <span class="token string">'http://img.qqzhi.com/uploads/2019-04-03/060633745.jpg'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+
+<span class="token comment">// 各模块监听登录成功的消息</span>
+<span class="token keyword">const</span> header <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  login<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token string">'loginSuc'</span><span class="token punctuation">,</span> <span class="token parameter">data</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    header<span class="token punctuation">.</span><span class="token function">setAvatar</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>avatar<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">setAvatar</span><span class="token operator">:</span> <span class="token parameter">avatar</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">头像数据：</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>avatar<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> nav <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  login<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token string">'loginSuc'</span><span class="token punctuation">,</span> <span class="token parameter">data</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    nav<span class="token punctuation">.</span><span class="token function">setAvatar</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>avatar<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">setAvatar</span><span class="token operator">:</span> <span class="token parameter">avatar</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">导航数据：</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>avatar<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><blockquote><p>分析：</p> <p>当登录成功时，登录模块只需发布登录成功的消息，而业务方接收到消息后，就会开始进行各自的业务处理，登录模块不需要关心业务方究竟要做什么，也不用去了解他们的内部细节。如果有一天又有其他模块需要依赖登录信息，那么只需在那个模块里加上监听消息的方法即可，不需要再去修改登录部分的模块代码了。</p></blockquote></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/notes/04.设计模式/单例模式.html" class="prev">
+        单例模式
+      </a></span> <span class="next"><a href="/blog/notes/04.设计模式/命令模式.html">
+        命令模式
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.80d78e54.js" defer></script><script src="/blog/assets/js/2.6c5a5ebc.js" defer></script><script src="/blog/assets/js/27.c2c83ead.js" defer></script>
+  </body>
+</html>

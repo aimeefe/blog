@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>中介者模式 | ❤️❤️❤️</title>
+    <meta name="description" content="前端，开发，进阶，笔记">
+    <meta name="generator" content="VuePress 1.3.0">
+    
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.ac634132.css" as="style"><link rel="preload" href="/blog/assets/js/app.80d78e54.js" as="script"><link rel="preload" href="/blog/assets/js/2.6c5a5ebc.js" as="script"><link rel="preload" href="/blog/assets/js/24.4f2afd9d.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.8da95c9f.js"><link rel="prefetch" href="/blog/assets/js/11.c593a547.js"><link rel="prefetch" href="/blog/assets/js/12.f1c08ffe.js"><link rel="prefetch" href="/blog/assets/js/13.767832f8.js"><link rel="prefetch" href="/blog/assets/js/14.2a2b4737.js"><link rel="prefetch" href="/blog/assets/js/15.51d396b0.js"><link rel="prefetch" href="/blog/assets/js/16.32a1ca02.js"><link rel="prefetch" href="/blog/assets/js/17.b55e63c6.js"><link rel="prefetch" href="/blog/assets/js/18.b9d4e361.js"><link rel="prefetch" href="/blog/assets/js/19.7281e615.js"><link rel="prefetch" href="/blog/assets/js/20.91621a19.js"><link rel="prefetch" href="/blog/assets/js/21.e2b8ea91.js"><link rel="prefetch" href="/blog/assets/js/22.6caedcc0.js"><link rel="prefetch" href="/blog/assets/js/23.b514fea6.js"><link rel="prefetch" href="/blog/assets/js/25.99f5d4ec.js"><link rel="prefetch" href="/blog/assets/js/26.ca72e1f6.js"><link rel="prefetch" href="/blog/assets/js/27.c2c83ead.js"><link rel="prefetch" href="/blog/assets/js/28.035bde5e.js"><link rel="prefetch" href="/blog/assets/js/29.c9fb3c04.js"><link rel="prefetch" href="/blog/assets/js/3.315dffdd.js"><link rel="prefetch" href="/blog/assets/js/30.09593c06.js"><link rel="prefetch" href="/blog/assets/js/31.70c4296c.js"><link rel="prefetch" href="/blog/assets/js/32.0abbc4ea.js"><link rel="prefetch" href="/blog/assets/js/33.31a4f07e.js"><link rel="prefetch" href="/blog/assets/js/34.132654a5.js"><link rel="prefetch" href="/blog/assets/js/35.a77003b9.js"><link rel="prefetch" href="/blog/assets/js/36.c8c0dc61.js"><link rel="prefetch" href="/blog/assets/js/37.bc748c14.js"><link rel="prefetch" href="/blog/assets/js/38.ed34adeb.js"><link rel="prefetch" href="/blog/assets/js/39.b30739ec.js"><link rel="prefetch" href="/blog/assets/js/4.03ca44f5.js"><link rel="prefetch" href="/blog/assets/js/40.5d8d1919.js"><link rel="prefetch" href="/blog/assets/js/41.d2f80426.js"><link rel="prefetch" href="/blog/assets/js/42.34bdf90e.js"><link rel="prefetch" href="/blog/assets/js/5.83154436.js"><link rel="prefetch" href="/blog/assets/js/6.0b9eae7f.js"><link rel="prefetch" href="/blog/assets/js/7.cb853795.js"><link rel="prefetch" href="/blog/assets/js/8.1e9d1614.js"><link rel="prefetch" href="/blog/assets/js/9.46c1a5cb.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.ac634132.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">❤️❤️❤️</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="00.前端" class="dropdown-title"><span class="title">00.前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/00.HTML5/00.基础.html" class="nav-link">
+  00.HTML5
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/01.JavaScript/00.ES6-函数.html" class="nav-link">
+  01.JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/03.HTTP/00.tcpip协议族.html" class="nav-link">
+  03.HTTP
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/04.浏览器与安全/00.浏览器的渲染原理详解.html" class="nav-link">
+  04.浏览器与安全
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="01.框架" class="dropdown-title"><span class="title">01.框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/01.框架/00.Vue/00.Vue核心原理解析.html" class="nav-link">
+  00.Vue
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/notes/02.原理探究/00.call、apply、bind.html" class="nav-link">
+  02.原理探究
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="03.自动化与部署" class="dropdown-title"><span class="title">03.自动化与部署</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/03.自动化与部署/webpack/webpack4.html" class="nav-link">
+  webpack
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/notes/04.设计模式/中介者模式.html" class="nav-link">
+  04.设计模式
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="05.数据结构与算法" class="dropdown-title"><span class="title">05.数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/05.数据结构与算法/00.数据结构/00.栈.html" class="nav-link">
+  00.数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/05.数据结构与算法/01.算法修炼/00.冒泡排序.html" class="nav-link">
+  01.算法修炼
+</a></li></ul></div></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="00.前端" class="dropdown-title"><span class="title">00.前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/00.HTML5/00.基础.html" class="nav-link">
+  00.HTML5
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/01.JavaScript/00.ES6-函数.html" class="nav-link">
+  01.JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/03.HTTP/00.tcpip协议族.html" class="nav-link">
+  03.HTTP
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/04.浏览器与安全/00.浏览器的渲染原理详解.html" class="nav-link">
+  04.浏览器与安全
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="01.框架" class="dropdown-title"><span class="title">01.框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/01.框架/00.Vue/00.Vue核心原理解析.html" class="nav-link">
+  00.Vue
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/notes/02.原理探究/00.call、apply、bind.html" class="nav-link">
+  02.原理探究
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="03.自动化与部署" class="dropdown-title"><span class="title">03.自动化与部署</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/03.自动化与部署/webpack/webpack4.html" class="nav-link">
+  webpack
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/notes/04.设计模式/中介者模式.html" class="nav-link">
+  04.设计模式
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="05.数据结构与算法" class="dropdown-title"><span class="title">05.数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/05.数据结构与算法/00.数据结构/00.栈.html" class="nav-link">
+  00.数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/05.数据结构与算法/01.算法修炼/00.冒泡排序.html" class="nav-link">
+  01.算法修炼
+</a></li></ul></div></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/notes/04.设计模式/中介者模式.html" class="active sidebar-link">中介者模式</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/notes/04.设计模式/中介者模式.html#场景" class="sidebar-link">场景</a></li><li class="sidebar-sub-header"><a href="/blog/notes/04.设计模式/中介者模式.html#生活场景" class="sidebar-link">生活场景</a></li><li class="sidebar-sub-header"><a href="/blog/notes/04.设计模式/中介者模式.html#优点" class="sidebar-link">优点</a></li><li class="sidebar-sub-header"><a href="/blog/notes/04.设计模式/中介者模式.html#缺点" class="sidebar-link">缺点</a></li><li class="sidebar-sub-header"><a href="/blog/notes/04.设计模式/中介者模式.html#使用" class="sidebar-link">使用</a></li></ul></li><li><a href="/blog/notes/04.设计模式/代理模式.html" class="sidebar-link">代理模式</a></li><li><a href="/blog/notes/04.设计模式/单例模式.html" class="sidebar-link">单例模式</a></li><li><a href="/blog/notes/04.设计模式/发布订阅模式.html" class="sidebar-link">发布-订阅模式</a></li><li><a href="/blog/notes/04.设计模式/命令模式.html" class="sidebar-link">命令模式</a></li><li><a href="/blog/notes/04.设计模式/模板方法模式.html" class="sidebar-link">模板方法模式</a></li><li><a href="/blog/notes/04.设计模式/策略模式.html" class="sidebar-link">策略模式</a></li><li><a href="/blog/notes/04.设计模式/职责链模式.html" class="sidebar-link">职责链模式</a></li><li><a href="/blog/notes/04.设计模式/装饰者模式.html" class="sidebar-link">装饰者模式</a></li><li><a href="/blog/notes/04.设计模式/适配器模式.html" class="sidebar-link">适配器模式</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="中介者模式"><a href="#中介者模式" class="header-anchor">#</a> 中介者模式</h1> <p>中介者模式使网状的多对多关系变成了简单的一对多关系。</p> <h2 id="场景"><a href="#场景" class="header-anchor">#</a> 场景</h2> <p>对模块或对象间依赖关系解耦。</p> <h2 id="生活场景"><a href="#生活场景" class="header-anchor">#</a> 生活场景</h2> <p>机场指挥塔</p> <p>如果没有机场的指挥塔，每一架飞机要和方圆100公里的所有飞机通信才能确定航线及飞行状况，后果是不可想象的。现实中的情况是，每架飞机只需和指挥塔通信，指挥塔作为调停者，知道每一架飞机的飞行状况，可以安排所有飞机的起降时间及航线调整。</p> <h2 id="优点"><a href="#优点" class="header-anchor">#</a> 优点</h2> <p>中介者模式可以使各个对象之间得以解耦，以中介者和对象之间的一对多关系取代了对象之间的网状多对多关系。各个对象只需关注自身功能的实现，对象之间的交互关系交给中介者对象来实现和维护。</p> <h2 id="缺点"><a href="#缺点" class="header-anchor">#</a> 缺点</h2> <p>系统中会新增一个中介者对象，因为对象之间交互的复杂性转移到了中介者对象的复杂性，使得中介者对象是巨大的，本身成了一个难以维护的对象。</p> <h2 id="使用"><a href="#使用" class="header-anchor">#</a> 使用</h2> <h6 id="demo-购买手机，在购买的流程中可以选择手机颜色及购买数量，同时页面中有两个区域，分别展示刚刚选好的颜色和数量，还有一个按钮动态显示下一步操作，包括库存状态等。"><a href="#demo-购买手机，在购买的流程中可以选择手机颜色及购买数量，同时页面中有两个区域，分别展示刚刚选好的颜色和数量，还有一个按钮动态显示下一步操作，包括库存状态等。" class="header-anchor">#</a> demo 购买手机，在购买的流程中可以选择手机颜色及购买数量，同时页面中有两个区域，分别展示刚刚选好的颜色和数量，还有一个按钮动态显示下一步操作，包括库存状态等。</h6> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code>
+<span class="token keyword">const</span> <span class="token function-variable function">el</span> <span class="token operator">=</span> <span class="token parameter">element</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 手机库存</span>
+<span class="token keyword">const</span> goods <span class="token operator">=</span> <span class="token punctuation">{</span>
+  red<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+  blue<span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
+  yellow<span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+  green<span class="token operator">:</span> <span class="token number">5</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="原始代码"><a href="#原始代码" class="header-anchor">#</a> 原始代码</h3> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> btn <span class="token operator">=</span> <span class="token function">el</span><span class="token punctuation">(</span><span class="token string">'#btn'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> form <span class="token operator">=</span> <span class="token function">el</span><span class="token punctuation">(</span><span class="token string">'#form'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> colorSelect <span class="token operator">=</span> <span class="token function">el</span><span class="token punctuation">(</span><span class="token string">'#color'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> numberInput <span class="token operator">=</span> <span class="token function">el</span><span class="token punctuation">(</span><span class="token string">'#number'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> colorInfo <span class="token operator">=</span> <span class="token function">el</span><span class="token punctuation">(</span><span class="token string">'#color-info'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> numberInfo <span class="token operator">=</span> <span class="token function">el</span><span class="token punctuation">(</span><span class="token string">'#number-info'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 当颜色值有改动时</span>
+colorSelect<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'change'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> color <span class="token operator">=</span> e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">;</span> <span class="token comment">//颜色</span>
+  <span class="token keyword">const</span> number <span class="token operator">=</span> form<span class="token punctuation">.</span>number<span class="token punctuation">.</span>value<span class="token punctuation">;</span> <span class="token comment">//数量</span>
+  <span class="token keyword">const</span> stock <span class="token operator">=</span> goods<span class="token punctuation">[</span>color<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">//库存</span>
+
+  colorInfo<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> color<span class="token punctuation">;</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>color<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    btn<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    btn<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">'请选择手机颜色'</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>number<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    btn<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    btn<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">'请输入购买数量'</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>number <span class="token operator">&gt;</span> stock<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    btn<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    btn<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">'库存不足'</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  btn<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  btn<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">'加入购物车'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 当数量值有改动时</span>
+numberInput<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'change'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> color <span class="token operator">=</span> form<span class="token punctuation">.</span>color<span class="token punctuation">.</span>value<span class="token punctuation">;</span> 
+  <span class="token keyword">const</span> number <span class="token operator">=</span> e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> stock <span class="token operator">=</span> goods<span class="token punctuation">[</span>color<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+  numberInfo<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> number<span class="token punctuation">;</span>
+
+  <span class="token comment">// 颜色处理</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>color<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    btn<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    btn<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">'请选择手机颜色'</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 数量处理</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>number<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    btn<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    btn<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">'请输入购买数量'</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 库存处理</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>number <span class="token operator">&gt;</span> stock<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    btn<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    btn<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">'库存不足'</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  btn<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+  btn<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">'加入购物车'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>如上，当触发了 colorSelect 的 change 事件后：</p> <ul><li>首先，让 colorInfo 显示当前选中的颜色</li> <li>然后，获取用户输入的购买数量</li> <li>最后，根据库存判断 button 显示的状态</li></ul> <p>同样，当触发了 numberInput 的 change 事件后，也需要做类似处理，那么，如果这时候增加了内存、系统...等一系列的选择，这些对象紧紧的耦合在一起，他们之间的联系也错综复杂，增加任何一个节点对象都要通知到其他相关对象。</p> <h3 id="中介者模式重构"><a href="#中介者模式重构" class="header-anchor">#</a> 中介者模式重构</h3> <div class="language-JavaScript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> btn <span class="token operator">=</span> <span class="token function">el</span><span class="token punctuation">(</span><span class="token string">'#btn'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> form <span class="token operator">=</span> <span class="token function">el</span><span class="token punctuation">(</span><span class="token string">'#form'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> colorSelect <span class="token operator">=</span> <span class="token function">el</span><span class="token punctuation">(</span><span class="token string">'#color'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> numberInput <span class="token operator">=</span> <span class="token function">el</span><span class="token punctuation">(</span><span class="token string">'#number'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">mediator</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> colorInfo <span class="token operator">=</span> <span class="token function">el</span><span class="token punctuation">(</span><span class="token string">'#color-info'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> numberInfo <span class="token operator">=</span> <span class="token function">el</span><span class="token punctuation">(</span><span class="token string">'#number-info'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">changed</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> color <span class="token operator">=</span> form<span class="token punctuation">.</span>color<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+      <span class="token keyword">const</span> number <span class="token operator">=</span> form<span class="token punctuation">.</span>number<span class="token punctuation">.</span>value<span class="token punctuation">;</span>
+      <span class="token keyword">const</span> stock <span class="token operator">=</span> goods<span class="token punctuation">[</span>color<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// 如果颜色有改变</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>obj<span class="token punctuation">.</span>target <span class="token operator">===</span> colorSelect<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        colorInfo<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> color<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>obj<span class="token punctuation">.</span>target <span class="token operator">===</span> numberInput<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        numberInfo<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> number<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token comment">// 颜色处理</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>color<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        btn<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        btn<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">'请选择手机颜色'</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token comment">// 用户输入的购买数量是否是正整数</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>number<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        btn<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        btn<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">'请输入购买数量'</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token comment">// 库存处理</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>number <span class="token operator">&gt;</span> stock<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        btn<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        btn<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">'库存不足'</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      btn<span class="token punctuation">.</span>disabled <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+      btn<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">'加入购物车'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+<span class="token comment">// 事件函数</span>
+colorSelect<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'change'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  mediator<span class="token punctuation">.</span><span class="token function">changed</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+numberInput<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'change'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  mediator<span class="token punctuation">.</span><span class="token function">changed</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>我们用中介者模式重构之后，会发现省去了很多重复的处理，并且如果以后再增加相应的需求，比如 CPU 型号等，直接修改 mediatot 即可，维护起来相对来说更容易了。</p> <h3 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h3> <p>中介者模式可以方便的对模块或对象进行解耦，但对象之间并非一定需要解耦。实际项目中，模块或对象之间有一些依赖关系很正常，关键在于如何去衡量对象间的耦合度。如果对象之间的耦合度确实导致了调用和维护困难，而且这些耦合度随着项目的变化呈指数增长曲线，那我们就可以考虑用中介者模式来重构。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/blog/notes/04.设计模式/代理模式.html">
+        代理模式
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/blog/assets/js/app.80d78e54.js" defer></script><script src="/blog/assets/js/2.6c5a5ebc.js" defer></script><script src="/blog/assets/js/24.4f2afd9d.js" defer></script>
+  </body>
+</html>
