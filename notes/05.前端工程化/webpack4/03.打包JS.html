@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>打包JS | ❤️❤️❤️</title>
+    <meta name="description" content="前端，开发，进阶，笔记">
+    <meta name="generator" content="VuePress 1.3.0">
+    
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.20911dc2.css" as="style"><link rel="preload" href="/blog/assets/js/app.5e4257f0.js" as="script"><link rel="preload" href="/blog/assets/js/2.fdb67c4d.js" as="script"><link rel="preload" href="/blog/assets/js/4.cd71b6cf.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.ead10719.js"><link rel="prefetch" href="/blog/assets/js/11.6874090a.js"><link rel="prefetch" href="/blog/assets/js/12.dd6ce3ea.js"><link rel="prefetch" href="/blog/assets/js/13.c10d7a44.js"><link rel="prefetch" href="/blog/assets/js/14.7b8ee0d6.js"><link rel="prefetch" href="/blog/assets/js/15.962515db.js"><link rel="prefetch" href="/blog/assets/js/16.53b0a6bc.js"><link rel="prefetch" href="/blog/assets/js/17.a6baf1f5.js"><link rel="prefetch" href="/blog/assets/js/18.6dfafffe.js"><link rel="prefetch" href="/blog/assets/js/19.108bd403.js"><link rel="prefetch" href="/blog/assets/js/20.50aeb37d.js"><link rel="prefetch" href="/blog/assets/js/21.beeff363.js"><link rel="prefetch" href="/blog/assets/js/22.82b7729e.js"><link rel="prefetch" href="/blog/assets/js/23.bd9b225d.js"><link rel="prefetch" href="/blog/assets/js/24.a2f5c3fc.js"><link rel="prefetch" href="/blog/assets/js/25.8072e1cb.js"><link rel="prefetch" href="/blog/assets/js/26.eab3b2d2.js"><link rel="prefetch" href="/blog/assets/js/27.c9659aef.js"><link rel="prefetch" href="/blog/assets/js/28.59a9e408.js"><link rel="prefetch" href="/blog/assets/js/29.b1acb638.js"><link rel="prefetch" href="/blog/assets/js/3.2c34a2c7.js"><link rel="prefetch" href="/blog/assets/js/30.843058a3.js"><link rel="prefetch" href="/blog/assets/js/31.b7860510.js"><link rel="prefetch" href="/blog/assets/js/32.915f7c8d.js"><link rel="prefetch" href="/blog/assets/js/33.2d3a4cab.js"><link rel="prefetch" href="/blog/assets/js/34.228667b7.js"><link rel="prefetch" href="/blog/assets/js/35.3c19929e.js"><link rel="prefetch" href="/blog/assets/js/36.b86bfa8d.js"><link rel="prefetch" href="/blog/assets/js/37.ad448a1a.js"><link rel="prefetch" href="/blog/assets/js/38.35130d51.js"><link rel="prefetch" href="/blog/assets/js/39.1b141ae9.js"><link rel="prefetch" href="/blog/assets/js/40.4da04578.js"><link rel="prefetch" href="/blog/assets/js/41.fed5a8c7.js"><link rel="prefetch" href="/blog/assets/js/42.e4dc6cae.js"><link rel="prefetch" href="/blog/assets/js/43.5c612abd.js"><link rel="prefetch" href="/blog/assets/js/44.ef047eb0.js"><link rel="prefetch" href="/blog/assets/js/45.2900d37c.js"><link rel="prefetch" href="/blog/assets/js/46.a8316df4.js"><link rel="prefetch" href="/blog/assets/js/47.aa718bd2.js"><link rel="prefetch" href="/blog/assets/js/48.e641ba7f.js"><link rel="prefetch" href="/blog/assets/js/49.07791e88.js"><link rel="prefetch" href="/blog/assets/js/5.9472fb2a.js"><link rel="prefetch" href="/blog/assets/js/50.7ab7ebe8.js"><link rel="prefetch" href="/blog/assets/js/51.c5bb2b1e.js"><link rel="prefetch" href="/blog/assets/js/52.12831f79.js"><link rel="prefetch" href="/blog/assets/js/53.a48d6bc0.js"><link rel="prefetch" href="/blog/assets/js/54.171e8d7c.js"><link rel="prefetch" href="/blog/assets/js/55.4d238371.js"><link rel="prefetch" href="/blog/assets/js/56.46112b4e.js"><link rel="prefetch" href="/blog/assets/js/57.4817f552.js"><link rel="prefetch" href="/blog/assets/js/58.9eeea563.js"><link rel="prefetch" href="/blog/assets/js/59.10834a40.js"><link rel="prefetch" href="/blog/assets/js/6.f3c751e9.js"><link rel="prefetch" href="/blog/assets/js/60.54acc708.js"><link rel="prefetch" href="/blog/assets/js/61.ff6ebfed.js"><link rel="prefetch" href="/blog/assets/js/62.b7413e42.js"><link rel="prefetch" href="/blog/assets/js/63.61656b04.js"><link rel="prefetch" href="/blog/assets/js/64.fb908471.js"><link rel="prefetch" href="/blog/assets/js/65.40d623e5.js"><link rel="prefetch" href="/blog/assets/js/66.f29c7148.js"><link rel="prefetch" href="/blog/assets/js/67.da9022ff.js"><link rel="prefetch" href="/blog/assets/js/68.004c5ee0.js"><link rel="prefetch" href="/blog/assets/js/69.3bd0599c.js"><link rel="prefetch" href="/blog/assets/js/7.fde80058.js"><link rel="prefetch" href="/blog/assets/js/70.84a01f95.js"><link rel="prefetch" href="/blog/assets/js/8.2532e4a8.js"><link rel="prefetch" href="/blog/assets/js/9.6c0ee897.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.20911dc2.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><!----> <span class="site-name">❤️❤️❤️</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="00.前端" class="dropdown-title"><span class="title">00.前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/00.HTML&amp;CSS/00.HTML.html" class="nav-link">
+  00.HTML&amp;CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/01.JavaScript/00.数据类型与检测.html" class="nav-link">
+  01.JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/02.ES6+/00.对象扩展.html" class="nav-link">
+  02.ES6+
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/04.HTTP/00.tcpip协议族.html" class="nav-link">
+  04.HTTP
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/05.浏览器与安全/00.浏览器的渲染原理详解.html" class="nav-link">
+  05.浏览器与安全
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="01.框架" class="dropdown-title"><span class="title">01.框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/01.框架/00.Vue/00.Vue 核心原理解析.html" class="nav-link">
+  00.Vue
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/notes/02.原理探究/00.call、apply、bind.html" class="nav-link">
+  02.原理探究
+</a></div><div class="nav-item"><a href="/blog/notes/03.设计模式/中介者模式.html" class="nav-link">
+  03.设计模式
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="04.数据结构与算法" class="dropdown-title"><span class="title">04.数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/04.数据结构与算法/00.数据结构/00.栈.html" class="nav-link">
+  00.数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/04.数据结构与算法/01.算法修炼/00.冒泡排序.html" class="nav-link">
+  01.算法修炼
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="05.前端工程化" class="dropdown-title"><span class="title">05.前端工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/05.前端工程化/webpack4/00.准备工作.html" class="nav-link">
+  webpack4
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/05.前端工程化/乱七八糟/00.webpack4.html" class="nav-link">
+  乱七八糟
+</a></li></ul></div></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="00.前端" class="dropdown-title"><span class="title">00.前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/00.HTML&amp;CSS/00.HTML.html" class="nav-link">
+  00.HTML&amp;CSS
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/01.JavaScript/00.数据类型与检测.html" class="nav-link">
+  01.JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/02.ES6+/00.对象扩展.html" class="nav-link">
+  02.ES6+
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/04.HTTP/00.tcpip协议族.html" class="nav-link">
+  04.HTTP
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/00.前端/05.浏览器与安全/00.浏览器的渲染原理详解.html" class="nav-link">
+  05.浏览器与安全
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="01.框架" class="dropdown-title"><span class="title">01.框架</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/01.框架/00.Vue/00.Vue 核心原理解析.html" class="nav-link">
+  00.Vue
+</a></li></ul></div></div><div class="nav-item"><a href="/blog/notes/02.原理探究/00.call、apply、bind.html" class="nav-link">
+  02.原理探究
+</a></div><div class="nav-item"><a href="/blog/notes/03.设计模式/中介者模式.html" class="nav-link">
+  03.设计模式
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="04.数据结构与算法" class="dropdown-title"><span class="title">04.数据结构与算法</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/04.数据结构与算法/00.数据结构/00.栈.html" class="nav-link">
+  00.数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/04.数据结构与算法/01.算法修炼/00.冒泡排序.html" class="nav-link">
+  01.算法修炼
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="05.前端工程化" class="dropdown-title"><span class="title">05.前端工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/notes/05.前端工程化/webpack4/00.准备工作.html" class="nav-link">
+  webpack4
+</a></li><li class="dropdown-item"><!----> <a href="/blog/notes/05.前端工程化/乱七八糟/00.webpack4.html" class="nav-link">
+  乱七八糟
+</a></li></ul></div></div><div class="nav-item"><a href="https://google.com" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/notes/05.前端工程化/webpack4/00.准备工作.html" class="sidebar-link">准备工作</a></li><li><a href="/blog/notes/05.前端工程化/webpack4/01.打包样式资源.html" class="sidebar-link">打包样式</a></li><li><a href="/blog/notes/05.前端工程化/webpack4/02.打包HTML资源.html" class="sidebar-link">打包HTML</a></li><li><a href="/blog/notes/05.前端工程化/webpack4/03.打包JS.html" class="active sidebar-link">打包JS</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/notes/05.前端工程化/webpack4/03.打包JS.html#使用-babel-转换-es6-语法" class="sidebar-link">使用 babel 转换 ES6+ 语法</a></li><li class="sidebar-sub-header"><a href="/blog/notes/05.前端工程化/webpack4/03.打包JS.html#开始" class="sidebar-link">开始</a></li><li class="sidebar-sub-header"><a href="/blog/notes/05.前端工程化/webpack4/03.打包JS.html#代码分割（优化）" class="sidebar-link">代码分割（优化）</a></li></ul></li><li><a href="/blog/notes/05.前端工程化/webpack4/04.webpack打包性能优化.html" class="sidebar-link">webpack 打包性能优化</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="打包js"><a href="#打包js" class="header-anchor">#</a> 打包JS</h1> <p><code>webpack</code>中关于<code>js</code>的处理，大致包含以下这些：</p> <p><img src="/blog/assets/img/js-map.66b368d1.png" alt="webpack 中的js处理"></p> <h2 id="使用-babel-转换-es6-语法"><a href="#使用-babel-转换-es6-语法" class="header-anchor">#</a> 使用 babel 转换 ES6+ 语法</h2> <p>在使用<code>babel</code>转换<code>ES6+</code>代码之前，先来了解下关于<code>babel</code>的几个基础知识：<a href="https://www.jianshu.com/p/0e6673a81fbd" target="_blank" rel="noopener noreferrer">关于babel<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <hr> <p>🍃<strong>babel 是什么</strong></p> <p>babel 是一个编译器，它可以将<code>ES2015+</code>代码转换成<code>ES2015</code>代码，以便能够运行在当前和旧版本浏览器或其他环境中，它的工作流程大致分为以下几步：</p> <ol><li><p>解析：通过词法分析、语法分析，将<code>javascript</code>源代码转换称为<code>AST</code>抽象语法树</p></li> <li><p>转换：将<code>AST</code>进行转换操作，再把<code>ES2015+</code>的部分转换为<code>ES5</code></p></li> <li><p>输出：将转换后的语法树重新生成代码，然后进行输出</p></li></ol> <hr> <p>🍃<strong>插件</strong></p> <p><code>babel</code>什么动作都不做，如果不使用插件的话就会将代码解析之后再输出同样的代码，类似于<code>const babel = code =&gt; code</code>。因此，如果我们想让<code>babel</code>按照我们的预期来完成代码转化，那么久需要在转换阶段通过配置的一系列转换插件来帮助我们完成，如：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token punctuation">{</span>
+  <span class="token string">&quot;plugins&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;@babel/plugin-transform-arrow-functions&quot;</span><span class="token punctuation">,</span> 
+    <span class="token string">&quot;@babel/plugin-transform-block-scoped-functions&quot;</span><span class="token punctuation">,</span>
+    <span class="token comment">//...</span>
+   <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><hr> <p>🍃<strong>预设 preset</strong></p> <p>如果通过手动配置很多的<code>plugin</code>，维护起来是很困难的，因此我们可以通过预设<code>preset</code>来帮助我们解决这个问题，<code>preset</code>是一堆<code>plugin</code>的简写，如：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token punctuation">{</span>
+  presets<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'@babel/preset-env'</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>如上，这样写的话就可以默认包含了所有转换<code>ES5+</code>标准语法的<code>plugin</code>，而不需要我们再去手动一个个的去设置相关<code>plugin</code></p></div> <h2 id="开始"><a href="#开始" class="header-anchor">#</a> 开始</h2> <p>在开始之前，我们先来创建以下目录：</p> <div class="language- extra-class"><pre class="language-text"><code>├─package.json
+├─src                 // 存放入口文件和开发文件
+│  └─index.js  
+├─webpack.config.js   // webpack 配置文件
+</code></pre></div><p>接下来打开入口文件，写点<code>es6</code>的东西，如下：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// src/index.js</span>
+<span class="token keyword">const</span> items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token keyword">of</span> items<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>现在开始使用<code>babel</code>来编译<code>es6+</code>代码，具体如下：</p> <ol><li>安装</li></ol> <p><code>cnpm install babel-loader @babel/core @babel/preset-env -D</code></p> <ul><li>babel/core：</li> <li>babel/preset-env</li></ul> <ol start="2"><li>编辑<code>webpack.config.js</code>，配置如下：</li></ol> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> <span class="token punctuation">{</span> resolve <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  module<span class="token operator">:</span> <span class="token punctuation">{</span>
+    rules<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+      test<span class="token operator">:</span> <span class="token regex">/\.js$/</span><span class="token punctuation">,</span>
+      use<span class="token operator">:</span> <span class="token punctuation">{</span>
+        loader<span class="token operator">:</span> <span class="token string">'babel-loader'</span><span class="token punctuation">,</span>
+        options<span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 预设</span>
+          presets<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'@babel/preset-env'</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>终端执行<code>npx webpack</code>，进行打包。成功后，打开编译后目录下的<code>index.js</code>查看，会发现<code>es6+</code>代码已经被编译成了<code>es5</code>的代码，如下：</p> <p><img src="/blog/assets/img/js-es6+.7b28f321.png" alt="webpack编译es6+"></p> <h3 id="补充缺失语法（垫片）"><a href="#补充缺失语法（垫片）" class="header-anchor">#</a> 补充缺失语法（垫片）</h3> <p><code>Babel</code>只转换<code>syntax</code>层语法，所以需要<code>@babel/polyfill</code>来处理<code>API</code>兼容，又因为<code>polyfill</code>体积太大，所以通过<code>preset</code>的<code>useBuiltIns</code>来实现按需加载，再接着为了满足<code>npm</code>组件开发的需要出现了<code>@babel/runtime</code>来做隔离。<a href="https://zhuanlan.zhihu.com/p/58624930" target="_blank" rel="noopener noreferrer">Babel学习系列4-polyfill和runtime差别(必看)<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>接下来我们来分别看看<code>babel-polyfill</code>和<code>babel-runtime</code>的使用方法</p> <h4 id="babel-polyfill"><a href="#babel-polyfill" class="header-anchor">#</a> babel-polyfill</h4> <ol><li><p>安装：<code>cnpm install @babel/polyfill -S</code></p></li> <li><p>在需要的js文件顶部引入<code>polyfill</code> 即可，如下：</p></li></ol> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// src/index.js</span>
+<span class="token keyword">import</span> <span class="token string">&quot;@babel/polyfill&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> items <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token keyword">of</span> items<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> mergeArr <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> items<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>mergeArr<span class="token punctuation">)</span>
+</code></pre></div><p>再次打包，就会发现之前没有被转译掉的<code>Object.assign</code>会正确在浏览器中运行</p> <p>接下来是对<code>@babel/polyfill</code>实现按需加载，如下</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+  module<span class="token operator">:</span> <span class="token punctuation">{</span>
+    rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        test<span class="token operator">:</span> <span class="token regex">/\.js$/</span><span class="token punctuation">,</span>
+          <span class="token comment">// 不包含</span>
+          exclude<span class="token operator">:</span> <span class="token regex">/node_modules/</span><span class="token punctuation">,</span>
+          loader<span class="token operator">:</span> <span class="token string">'babel-loader'</span><span class="token punctuation">,</span>
+          <span class="token comment">// options 里面的配置也可以放到根目录下的.babelrc 文件中</span>
+          options<span class="token operator">:</span> <span class="token punctuation">{</span>
+            presets<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'@babel/preset-env'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> useBuiltIns<span class="token operator">:</span> <span class="token string">'usage'</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span> 
+  <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="babel-runtime"><a href="#babel-runtime" class="header-anchor">#</a> babel-runtime</h4> <p>TODODODODOODO</p> <h2 id="代码分割（优化）"><a href="#代码分割（优化）" class="header-anchor">#</a> 代码分割（优化）</h2> <p>代码分割允许我们把一个大文件拆分成多个小文件，然后去按需/并行加载这些文件，如果使用合理会大大减少页面的加载时间，常用的代码分割的方式有以下三种：</p> <ul><li>入口起点：通过<code>entry</code>手动配置多个入口文件</li> <li>避免重复：通过<code>splitChunks</code>插件删除并提取公共代码作为一个单独<code>chunks</code></li> <li>动态导入：调用<code>import()</code>或<code>require.ensure()</code>异步加载模块</li></ul> <p>下面我们会分别对这三种拆包方式进行试验</p> <h3 id="第一种：entry-多入口拆包"><a href="#第一种：entry-多入口拆包" class="header-anchor">#</a> 第一种：entry 多入口拆包</h3> <p>使用<code>entry</code>多入口进行拆包，类似这样：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// ...</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// entry: './src/index.js',</span>
+  entry<span class="token operator">:</span> <span class="token punctuation">{</span>
+    file1<span class="token operator">:</span> <span class="token string">'./src/file1.js'</span><span class="token punctuation">,</span>
+    file2<span class="token operator">:</span> <span class="token string">'./src/file2.js'</span><span class="token punctuation">,</span>
+    <span class="token comment">// ...</span>
+    index<span class="token operator">:</span> <span class="token string">'./src/index.js'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  output<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// filename: 'index.js',</span>
+    filename<span class="token operator">:</span> <span class="token string">'[name].js'</span><span class="token punctuation">,</span>
+    path<span class="token operator">:</span> <span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    libraryTarget<span class="token operator">:</span> <span class="token string">'umd'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>这种方式是由弊端的：</p> <p><code>entry</code>中配置的所有文件，分别引入了同一个模块时会出现重复打包该模块的情况，而不会把这个共用的模块进行抽离</p> <p>因此，这种分包方式并没有被广泛使用，接下来可以看看<code>splitChunks</code>是如何来解决这种重复打包的情况的</p> <h3 id="splitchunks"><a href="#splitchunks" class="header-anchor">#</a> splitChunks</h3> <p>以前，我们使用<code>CommonsChunkPlugin</code>分包来避免依赖重复，但在<code>4.0</code>版本开始它已被移除。现在我们通过<code>optimization.splitChunks</code>和<code>optimization.runtimeChunks</code>来代替它</p> <h4 id="开始之前"><a href="#开始之前" class="header-anchor">#</a> 开始之前</h4> <p>在开始之前，先了解三个名词：<a href="https://www.cnblogs.com/kwzm/p/10314438.html" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <ul><li><p>module：<code>js</code>模块化<code>webpack</code>支持<code>commonjs、es6</code>等模块化规范，简单来说就是通过<code>import</code>等语句引入的代码</p></li> <li><p>chunk：<code>chunk</code>是<code>webpack</code>根据功能拆分出来的情况。它包含三种：</p> <ol><li>项目入口<code>entry</code></li> <li>通过<code>import()</code>动态导入的代码</li> <li>通过<code>splitChunks</code>拆分出来的代码</li></ol> <p><code>splitChunks</code>就是在<code>chunk</code>的基础上进行拆分的。<code>chunk</code>包含<code>module</code>，可能是一对一或者一对多</p></li> <li><p>bundle：<code>bundle</code>是<code>webpack</code>打包之后生成的文件，一般是和<code>chunk</code>一对一的关系</p></li></ul> <h4 id="目录准备"><a href="#目录准备" class="header-anchor">#</a> 目录准备</h4> <p>在了解<code>optimization.splitChunks</code>之前，先准备以下目录：</p> <div class="language- extra-class"><pre class="language-text"><code>├─package.json
+├─src                 
+│  └─file1.js         // 同步引入 jquery, vue, file4
+│  └─file2.js         // 同步引入 lodash, file4, file5
+│  └─file3.js         // 同步引入 file5
+│  └─file4.js         // 共用模块，被 file1 和 file2 使用
+│  └─file5.js         // 共用模块，被 file2 和 file3 使用
+│  └─index.js         // 主入口：异步引入 file1, file2；同步引入 file3, vue
+├─webpack.config.js   // webpack 配置文件
+</code></pre></div><p>现有 3 个<code>chunk</code>，分别是通过<code>import</code>动态导入的<code>file1</code>、<code>file2</code>和入口文件<code>index</code>，其中：</p> <ul><li>file1 和 file2 共用<code>file4</code></li> <li>file2 和 file3 共用<code>file5</code></li></ul> <p>文件内容如下：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// index.js</span>
+<span class="token keyword">import</span> <span class="token string">'./file3'</span>
+<span class="token keyword">import</span> vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span><span class="token punctuation">(</span><span class="token comment">/* webpackChunkName: &quot;file1&quot; */</span><span class="token string">'./file1'</span><span class="token punctuation">)</span>
+<span class="token keyword">import</span><span class="token punctuation">(</span><span class="token comment">/* webpackChunkName: &quot;file2&quot; */</span><span class="token string">'./file2'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// file1.js</span>
+<span class="token keyword">import</span> $ <span class="token keyword">from</span> <span class="token string">'jquery'</span>
+<span class="token keyword">import</span> vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> name <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./file4'</span>
+
+<span class="token comment">// file2.js</span>
+<span class="token keyword">import</span> _ <span class="token keyword">from</span> <span class="token string">'lodash'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> age <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./file4'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> a <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./file5'</span>
+
+<span class="token comment">// file3.js</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> a <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./file5'</span>
+
+<span class="token comment">// file4.js</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> name <span class="token operator">=</span> <span class="token string">'lily'</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> age <span class="token operator">=</span> <span class="token number">18</span>
+
+<span class="token comment">// file5.js</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> a <span class="token operator">=</span> <span class="token number">123</span>
+</code></pre></div><h4 id="开箱即用"><a href="#开箱即用" class="header-anchor">#</a> 开箱即用</h4> <p><code>optimization.splitChunks</code>是开箱即用的，即对它<code>不做任何配置</code>的时候它就可以进行拆包工作。其默认拆分代码规则如下：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  optimization<span class="token operator">:</span> <span class="token punctuation">{</span>
+    splitChunks<span class="token operator">:</span> <span class="token punctuation">{</span>
+      chunks<span class="token operator">:</span> <span class="token string">&quot;async&quot;</span><span class="token punctuation">,</span>
+      minSize<span class="token operator">:</span> <span class="token number">30000</span><span class="token punctuation">,</span>
+      maxSize<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      minChunks<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      maxAsyncRequests<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+      maxInitialRequests<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      automaticNameDelimiter<span class="token operator">:</span> <span class="token string">&quot;~&quot;</span><span class="token punctuation">,</span>
+      name<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      cacheGroups<span class="token operator">:</span> <span class="token punctuation">{</span>
+        vendors<span class="token operator">:</span> <span class="token punctuation">{</span>
+          test<span class="token operator">:</span> <span class="token regex">/[\\/]node_modules[\\/]/</span><span class="token punctuation">,</span>
+          priority<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">10</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token keyword">default</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          minChunks<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+          priority<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">20</span><span class="token punctuation">,</span>
+          reuseExistingChunk<span class="token operator">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>不要在没有实践测量的情况下，尝试手动优化这些参数。默认模式是经过千挑万选的，可以用于满足最佳web性能的策略</p></div> <p>说明：</p> <p>🍃<strong>splitChunks.chunks</strong></p> <p>它可以设置三个值，分别是<code>all、async、initial</code>。默认值<code>async</code>，因为<code>webpack</code>更希望将代码中异步引入的部分作为独立模块进行抽离，在需要的时候再引入，这样懒加载的形式可以提升页面性能。三个值的具体表现如下：</p> <ul><li><p>async：默认值，从异步加载（如<code>import()</code>动态引入）的<code>chunk</code>开始进行拆分，遵循以下规律：</p> <p><img src="/blog/assets/img/js-split__chunks__asyncmap.2b5ed960.png" alt="splitChunks.chunks=initial的流程图"></p> <p>下面来看看<code>chunks.async</code>的具体表现：</p> <p><img src="/blog/assets/img/js-split__chunks__default.daf04f01.png" alt="slitChunks默认分割"></p> <p>如图：file1、file2、index 这三个 chunk 被拆分的情况如下：</p> <ol><li>index：单独抽离到了<code>index.js</code>，包括同步引入的<code>vue</code>、<code>file3</code>及<code>file3</code>中同步引入的<code>file5</code></li> <li>file1：单独抽离成<code>file1.index.js</code>；引用的第三方包 jquery 和 vue，都被抽离到了<code>vendors~file1.index.js</code></li> <li>file2：单独抽离到了<code>file2.index.js</code>；引用的第三方包 lodash，抽离到了<code>vendors~file2.index.js</code></li></ol></li></ul> <hr> <ul><li><p>initial：从入口处<code>chunk</code>开始进行拆分，遵循以下规律：</p> <p><img src="/blog/assets/img/js-split__chunks__initialmap.18943a14.png" alt="splitChunks.chunks=initial的流程图"></p> <p>下面来看看<code>chunks.initial</code>的具体表现：</p> <p><img src="/blog/assets/img/js-split__chunks__initial.db009ab0.png" alt="splitChunks.chunks=initial"></p> <p>如图：file1、file2、index 这三个 chunk 被拆分的情况如下：</p> <ol><li>file1：被拆分成<code>file1.index.js</code>，不对<code>file1</code>内容再次进行拆分</li> <li>file2：被拆分成<code>file2.index.js</code>，不对<code>file2</code>内容再次进行拆分</li> <li>index：被拆分成<code>index.js</code>，其中引入的第三方模块被拆分到 <code>vendors~main.index.js</code></li></ol></li></ul> <hr> <ul><li><p>all：以上两者都包括，同步、异步模块均进行拆分</p> <p><img src="/blog/assets/img/js-split__chunks__all.1f1da2ed.png" alt="splitChunks.chunks=all"></p></li></ul> <hr> <p>🍃<strong>minSize</strong>：</p> <p>当模块大于<code>minSize</code>时，进行代码分割</p> <hr> <p>🍃<strong>minChunks</strong>：</p> <p>该模块最少被使用了<code>minChunks</code>时才被分割出来</p> <hr> <p>🍃<strong>reuseExistingChunk</strong>：</p> <p>重复使用已经存在的块，若某个模块在之前已经被打包过了，后面打包时再遇到这个模块就直接使用之前打包的模块</p> <hr> <p>🍃<strong>name</strong>：</p> <p>是否以<code>cacheGroups</code>中的<code>filename</code>作为文件名</p> <hr> <p>🍃<strong>automaticNameDelimiter</strong>：</p> <p>打包的<code>chunk</code>名字连接符，如设为<code>~</code>,生成的<code>chunk</code>文件名为<code>chunk~name.js</code></p> <hr> <h4 id="分包策略"><a href="#分包策略" class="header-anchor">#</a> 分包策略</h4> <p>在知道以上这些规则后，我们设置一个自己的<a href="https://www.jianshu.com/p/4f0600ea1c5f" target="_blank" rel="noopener noreferrer">分包策略<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，如：</p> <ul><li>基础类库：react，react-redux，react-router</li> <li>UI 库：antd，antd-icons</li> <li>公共组件库：自定义的公共组件</li> <li>低频组件：echart</li> <li>业务代码</li></ul> <h3 id="动态导入-import"><a href="#动态导入-import" class="header-anchor">#</a> 动态导入 import()</h3> <p>动态导入<code>import()</code>，是一个异步<code>chunk</code>，<code>webpack</code>会对它进行单独打包，</p> <p><code>import()</code>接收模块名作为参数并返回<code>Promise</code>：<code>import(name) -&gt; Promise</code></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 一个简单的例子：</span>
+<span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'./file1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">r</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h4 id="魔法注释"><a href="#魔法注释" class="header-anchor">#</a> 魔法注释</h4> <p>动态导入<code>import()</code>不允许我们在导入的时候使用除了文件名以外的任何参数，因此我们可以使用<code>webpack</code>中的魔法注释来帮我们使用附加参数，常用的几个如下：</p> <ol><li>webpackChunkName：它可以指定当前异步<code>chunk</code>被打包后的文件名称</li></ol> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span><span class="token punctuation">(</span><span class="token comment">/*webpackChunkName*/</span><span class="token string">'./file1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">r</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><ol start="2"><li>webpackPrefetch：预先拉取，在使用之前加载；它会在浏览器空闲的时候才来加载该模块</li></ol> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span><span class="token punctuation">(</span><span class="token comment">/*webpackPrefetch: true*/</span><span class="token string">'./file1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">r</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><ol start="3"><li>webpackPreload：</li></ol> <p>懒加载，在使用的时候才去下载（因此会有一定的加载时间造成用户等待）；比如点击某个按钮加载弹窗，在点击按钮的时候，浏览器会马上加载这部分需要的文件</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">import</span><span class="token punctuation">(</span><span class="token comment">/*webpackPreload: true*/</span><span class="token string">'./file1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">r</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/notes/05.前端工程化/webpack4/02.打包HTML资源.html" class="prev">
+        打包HTML
+      </a></span> <span class="next"><a href="/blog/notes/05.前端工程化/webpack4/04.webpack打包性能优化.html">
+        webpack 打包性能优化
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/blog/assets/js/app.5e4257f0.js" defer></script><script src="/blog/assets/js/2.fdb67c4d.js" defer></script><script src="/blog/assets/js/4.cd71b6cf.js" defer></script>
+  </body>
+</html>
