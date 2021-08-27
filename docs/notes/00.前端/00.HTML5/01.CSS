@@ -1,0 +1,56 @@
+## CSS 盒模型
+
+完整的 CSS 盒模型应用于「块级盒子」，组成一个块级盒子需要以下几个部分：
+Content box： 大小由 width 和 height 决定；
+Padding box：大小由 padding 决定；
+Border box：大小由 border 决定；
+Margin box：大小由 margin 决定。
+
+这些部分合并在一起就可以创建我们在页面上看到的内容。
+
+盒模型分类
+
+CSS 盒模型分为「标准盒模型」和 「IE 盒模型」：
+
+□ 标准盒模型：
+我们设置的 width 和 height 实际上是 content box，盒子的整体大小还需要加上 padding 和 border 的尺寸。
+盒子宽度 = width + padding（左右） + border（左右）
+盒子高度 = height + padding（上下） + border（上下）
+
+□ IE 盒模型：
+我们设置的 width 和 height 就是实际盒子的大小，此时 content box 的宽度应是设置的宽度 - padding - border 部分。
+盒子宽度 = width
+盒子高度 = height
+
+大部分浏览器默认会使用「标准盒模型」，如果需要使用 IE 盒模型可以通过「box-sizing: border-box」来进行切换。不过，IE8 以下的版本默认使用 IE 盒模型，无可替换机制，IE8 以上的才可支持 box-sizing 来切换。
+ box-sizing: border-box;  // IE 盒模型
+ box-sizing: content-box;  // 标准盒模型
+
+举例
+
+以 chrome 为例：chrome 默认的是标准盒模型，也就说盒子本身的宽度 = width + padding + border，下面来根据例子验证一下：
+
+现有 box1、box2 两个盒子，宽高分别 200 px，在一个宽度为 400px 的容器里一行排列。
+<body>
+  <div class="box">
+   <div class="box1">box1</div>
+   <div class="box2">box2</div>
+  </div>
+</body>
+      
+
+如图：box1 、box2 盒子的宽度分别是 200px，在一个 400px 的容器里完全可以并排排列。
+接下来分别给 box1、box2 添加一个 padding 值：
+   
+如图：box1、box2 两个盒子现在的宽度分别是：width (200) + padding(10 * 2) = 220px; 两个 220px 的盒子现在不能并排排列了。如果想让他们并排排列的话怎么办呢？
+
+接下来我们通过把 box1、box2 两个盒子变成 IE 盒模型来看看结果，设置方法如下：
+* {
+  box-sizing: border-box;  // IE 盒模型
+}
+效果：
+     
+
+设置成 IE盒模型之后， box1、box2 的盒子宽高就是我们设置的宽高 200px，设置的 padding 值都会被包含进去，border 也是如此（content box = width - padding - border）。因此两个盒子能同时并排展示在总宽度为 400px 的 box 里。
+
+注意：margin 不计入实际大小 —— 当然，它会影响盒子在页面所占空间，但是影响的是盒子外部空间。盒子的范围到边框为止 —— 不会延伸到 margin。
